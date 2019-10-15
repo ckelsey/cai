@@ -1,0 +1,563 @@
+html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    font-family: sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+input,
+select,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    outline: none !important;
+    padding: 0.5rem;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.17);
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    transition: 500ms all;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="file"] {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background: #00bce0;
+    color: #fff;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00c8ef;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 86%;
+    padding: 0.25rem 0px;
+    opacity: 0.75;
+}
+
+h3,
+h4 {
+    margin: 0.5rem 0px;
+}
+
+#content {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+
+#sidebar {
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    background: rgba(75, 80, 82, 0.125);
+    display: flex;
+    flex-direction: column;
+}
+
+#heading {
+    background: rgb(182, 190, 193);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: auto;
+    margin-left: -1rem;
+}
+
+#page-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.openOuter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    overflow: auto;
+    padding: 3rem;
+    box-sizing: border-box;
+    transition: opacity 300ms;
+}
+
+.openOuter.active {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1;
+}
+
+.openInner {
+    background: #f3f3f3;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    max-width: max-content;
+    min-width: min-content;
+    max-height: max-content;
+    min-height: min-content;
+    margin: auto;
+}
+
+.pdfRenderer {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.pdfRenderer .page_container > svg {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+}
+
+.page_container {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    transition: opacity 300ms;
+}
+
+[tab-content].active .page_container.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.11);
+}
+
+#heading .row {
+    padding: 0px;
+    box-shadow: none;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.setting {
+    width: 100%;
+    padding: 0.5rem 0rem;
+}
+
+#run.disabled,
+#exportBtn.disabled,
+#sidebar.disabled > .row {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#edit_text.disabled {
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.has-sibling {
+    margin-right: 1rem;
+}
+
+.section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    width: calc(100% + 0.25rem);
+    margin: 0.5rem -0.25rem;
+}
+
+.section > * {
+    margin: 0rem 0.25rem;
+}
+
+.section-stretch > * {
+    flex-grow: 1;
+}
+
+.section-equal > * {
+    flex-basis: 0;
+}
+
+#dbROOT {
+    min-width: 50vw;
+}
+
+.modifyCollection {
+    display: none;
+}
+
+.modifyCollection.active {
+    display: block;
+    margin: 2rem 0;
+}
+
+.modifyCollection button {
+    margin: 0.25rem 0rem;
+}
+
+.dbSection {
+    width: calc(100% - 0.25rem);
+    margin: 0px 0px 0px 0.25rem;
+}
+
+.modifyCollection .dbSection {
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0.125rem 1rem 0.75rem;
+    background: rgba(75, 80, 82, 0.125);
+    box-shadow: inset 0px 0px 0px 1px rgba(75, 80, 82, 0.125);
+}
+
+.modifyBtn {
+    width: 1.25rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    min-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4dbce1;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 1.2rem;
+    font-family: monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+.modifyBtn.danger {
+    background: #a82f2f;
+}
+
+.inputContainer {
+    width: 100%;
+    max-width: 300px;
+}
+
+.box {
+    background: rgba(75, 80, 82, 0.125);
+    box-shadow: inset 0px 0px 0px 1px rgba(75, 80, 82, 0.125);
+    padding: 0.5rem;
+    border-radius: 2px;
+    margin: 1rem 0rem;
+    box-sizing: border-box;
+    width: calc(100% - 0.5rem);
+}
+
+#svgEditor-sidebar,
+#preview-sidebar {
+    display: block;
+    min-width: 200px;
+    height: 100%;
+    overflow: auto;
+    background: #b6bec1;
+}
+
+.sidebar-section {
+    padding: 1vh 2vw;
+    box-shadow: inset 0px 1px 0px 0px #a2abaf;
+}
+
+#tab-contents {
+    flex-grow: 1;
+    position: relative;
+}
+
+button[tab] {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    box-shadow: none;
+    background: transparent;
+    color: #333;
+    padding: 0rem 1rem;
+    height: 4rem;
+    position: relative;
+    flex-direction: column;
+    margin: 0px -1rem;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+button[tab].disabled {
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+button[tab] > span {
+    background: rgb(182, 190, 193);
+    color: #333;
+    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+button[tab]:before,
+button[tab]:after {
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border: 2rem solid transparent;
+    border-left-color: rgb(182, 190, 193);
+    border-left-width: 1rem;
+    top: 0px;
+    left: 1rem;
+    transition: border-left-color 0.2s;
+}
+
+button[tab]:after {
+    left: calc(100% - 1rem);
+    z-index: 1;
+}
+
+button[tab]:hover > span {
+    background-color: rgb(155, 202, 220);
+}
+
+button[tab]:hover::after {
+    border-left-color: rgb(155, 202, 220);
+}
+
+button[tab].active:hover > span,
+button[tab].active > span {
+    background-color: rgb(0, 188, 224);
+    color: #fff;
+}
+
+button[tab].active:hover::after,
+button[tab].active::after {
+    border-left-color: rgb(0, 188, 224);
+}
+
+[tab-content] {
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+[tab-content].active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.tab-content-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+    justify-content: stretch;
+}
+
+.page-padding {
+    padding: 5vh 5vw;
+}
+
+.vertical-margin {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.vericalPadding {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.center-self {
+    align-self: center;
+}
+
+.max-scroll {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+#queryResultsContainer {
+    font-size: 0.85rem;
+    line-height: 0.8rem;
+    max-width: 33vw;
+    min-width: 35rem;
+    &:empty {
+        min-width: 0px;
+        max-width: 0px;
+    }
+}
+
+.json-row {
+    padding: 0.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 0.7rem;
+    .json-toggler {
+        display: flex;
+        align-items: flex-start;
+    }
+    .json-children {
+        min-width: 100%;
+        flex-wrap: wrap;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    &.type-array > .json-toggler:before,
+    &.type-object > .json-toggler:before {
+        content: "";
+        border: 0.25rem solid transparent;
+        border-left-color: #00bce0;
+        position: relative;
+        top: 0.21rem;
+        margin-left: -0.25rem;
+    }
+    &.open > .json-children {
+        max-height: unset;
+        overflow: auto;
+    }
+    &.open.type-array > .json-toggler:before,
+    &.open.type-object > .json-toggler:before {
+        border-left-color: transparent;
+        border-top-color: #00bce0;
+        top: 0.25rem;
+    }
+    &.open.type-array > .json-toggler,
+    &.open.type-object > .json-toggler {
+        cursor: pointer;
+    }
+    .json-key-name {
+        color: #0275bd;
+    }
+    &.type-string > .json-toggler > .json-value {
+        color: #9c9c9c;
+    }
+    &.type-object > .json-toggler > .json-key-name,
+    &.type-array > .json-toggler > .json-key-name {
+        color: #3300ec;
+    }
+    &.type-undefined > .json-toggler > .json-key-name,
+    &.type-null > .json-toggler > .json-key-name {
+        color: #ec8600;
+    }
+    &.type-boolean > .json-toggler > .json-key-name {
+        color: #7fb938;
+    }
+    &.type-number > .json-toggler > .json-key-name {
+        color: #b9387d;
+    }
+}
+
+.previewQueryResult {
+    padding: 0.25rem;
+    margin: 0.25rem 0;
+    background: #c9d1d4;
+    box-shadow: 0px 1px 3px -4px #000;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: color 0.2s, background-color 0.2s;
+    &.active {
+        background: #4dbce1;
+        color: #fff;
+        box-shadow: 0px 2px 7px -6px #000;
+    }
+    &:hover {
+        background: rgb(155, 202, 220);
+    }
+}
+
+#preview-sidebar {
+    h4 {
+        display: flex;
+        align-items: center;
+        button {
+            pointer-events: none;
+            opacity: 0.5;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+            transition: all 0.2s;
+            &.ready {
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+    }
+}

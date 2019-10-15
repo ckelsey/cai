@@ -1,0 +1,487 @@
+
+/*
+
+
+
+
+
+function initPdf() {
+    // page_number.setAttribute(`max`, pdf.pages.length)
+
+    // pdf.pages.forEach(page => {
+    //     setSvgElement(page)
+    //     Object.keys(page.elements).forEach(key => page.elements[key].url ? addImageElement(page.elements[key], page) : addTextElement(page.elements[key], page))
+    // })
+
+    // changePage(pdf.currentPage)
+    applyGlobalStyles()
+    updateStyleInputs(pdf.styles)
+
+    if (!pdf.pages.length) {
+        elementsToHideIfNoSource.forEach(el => el.classList.add(`disabled`))
+    }
+
+    if (!pdf.data) {
+        elementsToHideIfNoData.forEach(el => el.classList.add(`disabled`))
+    }
+
+    if (!currentElement) {
+        elementsToHideIfNoCurrentElement.forEach(el => el.classList.add(`disabled`))
+    }
+
+}
+
+
+document.body.addEventListener(`click`, function() {
+    // setCurrentElement()
+})
+
+runButton.addEventListener(`click`, function() {
+    if (!pdf.data) { return }
+
+    const randIndex = Math.floor(Math.random() * pdf.data.claims.length)
+
+    pdf.pages.forEach(page => {
+        Object.keys(page.elements).forEach(key => {
+            const textEl = document.getElementById(key)
+            const text = page.elements[key].text
+            const val = pdf.data.claims[randIndex].hasOwnProperty(text) ? pdf.data.claims[randIndex][text] : text
+            textEl.textContent = val
+        })
+    })
+})
+
+exportBtn.addEventListener(`click`, function() {
+    toFile()
+})
+
+
+
+
+
+
+
+
+
+
+
+// function applyElementStyles(item) {
+//     const el = document.getElementById(item.id)
+
+//     Object.keys(pdf.styles).forEach(styleKey => {
+//         let val = item.styles[styleKey]
+
+//         if (!val) {
+//             val = pdf.styles[styleKey]
+//         }
+
+//         if (styleKey === "font-size" || styleKey === "letter-spacing") {
+//             val = `${val}px`
+//         }
+
+//         if (styleKey === `color`) {
+//             styleKey = `fill`
+//         }
+
+//         el.style[styleKey] = val
+//     })
+// }
+
+
+// function applyGlobalStyles() {
+//     pdf.pages.forEach(page => {
+//         Object.keys(page.elements).forEach(key => {
+//             const el = document.getElementById(key)
+//             const styles = page.elements[key].styles || {}
+
+//             Object.keys(pdf.styles).forEach(styleKey => {
+//                 if (!styles[styleKey]) {
+//                     let val = pdf.styles[styleKey]
+
+//                     if (styleKey === "font-size" || styleKey === "letter-spacing") {
+//                         val = `${val}px`
+//                     }
+
+//                     el.style[styleKey] = val
+//                 }
+//             })
+//         })
+//     })
+// }
+
+
+// function updateStyleInputs(data, isElement) {
+//     let inputs = globalStyleInputs.slice()
+
+//     if (isElement) {
+//         inputs = elementStyleInputs.slice()
+//     }
+
+//     inputs.forEach(input => {
+//         if (!data) { return input.value = `` }
+
+//         var key = input.id
+
+//         if (!isElement) {
+//             key = key.split(`page_`)[1]
+//         }
+
+//         key = key.split(`_`).join(`-`)
+//         const val = !!data[key] && typeof data[key] === `string` ? data[key].split(`px`)[0] : ``
+
+//         if (key !== `font-family`) {
+//             input.value = val
+//         } else {
+//             Array.from(input.querySelectorAll(`option`)).forEach(option => {
+//                 if (option.value === val) {
+//                     option.setAttribute(`selected`, true)
+//                 } else {
+//                     option.removeAttribute(`selected`)
+//                 }
+//             })
+//         }
+//     })
+// }
+
+
+// textText.addEventListener(`blur`, function() {
+//     // setCurrentElement()
+// })
+
+
+// // textText.addEventListener(`input`, function() {
+// //     if (!currentElement) { return }
+
+// //     currentElement.innerHTML = textText.value
+// //     currentPage().elements[currentElement.id].text = textText.value
+// //     save()
+// // })
+
+// // textText.addEventListener(`focus`, function(e) {
+// //     e.preventDefault()
+// //     e.stopPropagation()
+// // })
+
+// // textText.addEventListener(`click`, function(e) {
+// //     e.preventDefault()
+// //     e.stopPropagation()
+// // })
+
+// addText.addEventListener(`click`, () => {
+//     addTextElement({
+//             id: `text_${new Date().getTime()}_${Math.round(Math.random() * 1000)}`,
+//             text: `replacement_variable`,
+//             position: { x: 20, y: 20 },
+//             styles: {}
+//         },
+//         currentPage()
+//     )
+// })
+
+// function addPage(data) {
+//     const id = `page_${new Date().getTime()}_${Math.round(Math.random() * 1000)}`
+//     const newPageData = { id, data, elements: {} }
+//     pdf.pages.push(newPageData)
+//     page_number.setAttribute(`max`, pdf.pages.length)
+//     changePage(pdf.pages.length)
+//     return newPageData
+// }
+
+// const defaultPdf = {
+//     pages: [],
+//     currentPage: 1,
+//     data: undefined,
+//     styles: {
+//         "font-family": "san-serif",
+//         "font-size": `12px`,
+//         "letter-spacing": `3px`,
+//         color: "#333"
+//     },
+//     name: 'ODD'
+// }
+
+
+
+// const defaultPage = {
+//     data: ``,
+//     elements: {},
+//     id:``
+// }
+
+// let pdf
+// let currentElement
+// let saveDebounce
+
+
+// function save() {
+//     clearTimeout(saveDebounce)
+
+//     saveDebounce = setTimeout(() => {
+//         window.localStorage.setItem(`pdf`, pdf.name)
+//         API({ path: `save`, data: JSON.stringify(pdf) })
+//     }, 1000)
+}
+
+
+
+// function open() {
+//     const project = localStorage.getItem(`pdf`)
+
+//     if (!project) {
+//         pdf = Object.assign({}, defaultPdf)
+//         return initPdf()
+//     } else {
+//         API({ path: `open`, data: project })
+//             .then(data => {
+//                 if (!data) {
+//                     pdf = Object.assign({}, defaultPdf)
+//                 } else {
+//                     pdf = data
+//                 }
+//                 return initPdf()
+//             })
+//     }
+// }
+
+
+// function setSvgElement(page) {
+//     const data = page.data
+//     const id = page.id
+//     const newPage = document.createElement(`iframe`)
+//     newPage.id = `page_${id}`
+//     newPage.className = `page_container`
+//     editorContainer.appendChild(newPage)
+
+//     const svgId = `svg_page_${id}`
+//     const svg = new DOMParser().parseFromString(data, `application/xml`)
+//     newPage.contentWindow.document.body.appendChild(newPage.ownerDocument.importNode(svg.documentElement, true))
+//     const svgEl = newPage.contentWindow.document.body.querySelector(`svg`)
+//     svgEl.id = svgId
+//     svgEl.style.width = `100%`
+//     svgEl.style.height = `auto`
+//     return svgEl
+// }
+
+// function currentPage() {
+//     return pdf.pages[pdf.currentPage - 1]
+// }
+
+// function currentPageSvg() {
+//     const idToGet = `svg_page_${currentPage().id}`
+//     return document.getElementById(idToGet)
+// }
+
+// function svgScaled() {
+//     const svg = currentPageSvg()
+//     const box = svg.getBoundingClientRect()
+//     const w = svg.width.baseVal.value
+
+//     return box.width / w
+// }
+
+// function changePage(pageNumber) {
+//     pageNumber = parseInt(pageNumber)
+//     pdf.currentPage = pageNumber
+//     page_number.value = pageNumber
+
+//     Array.from(document.body.querySelectorAll(`.page_container`))
+//         .forEach((el, index) => {
+//             if (index + 1 !== pageNumber) {
+//                 el.classList.remove(`active`)
+//             } else {
+//                 el.classList.add(`active`)
+//             }
+//         })
+// }
+
+
+
+// function StartDrag(selectedElement) {
+//     return function(evt) {
+//         const box = selectedElement.getBoundingClientRect()
+
+//         selectedElement.DragData = {
+//             x: evt.clientX - box.left,
+//             y: evt.clientY - box.top
+//         }
+
+//         editorContainer.addEventListener(`mousemove`, selectedElement._drag)
+//         window.addEventListener(`mouseup`, selectedElement._endDrag)
+//         editorContainer.addEventListener(`mouseleave`, selectedElement._endDrag)
+//     }
+// }
+
+// function Drag(selectedElement) {
+//     return function(evt) {
+//         evt.preventDefault()
+
+//         const svg = currentPageSvg()
+//         const box = svg.getBoundingClientRect()
+//         const elBox = selectedElement.getBoundingClientRect()
+//         const viewBox = svg.getAttribute(`viewBox`).split(` `)
+//         const svgHeight = parseFloat(viewBox[3])
+//         const svgWidth = parseFloat(viewBox[2])
+
+//         const yOffset = evt.clientY - elBox.top
+//         const yContainerOffset = (evt.clientY - box.top) - selectedElement.DragData.y
+//         const y = ((yContainerOffset + elBox.height) / box.height) * svgHeight
+
+//         const xOffset = evt.clientX - elBox.left
+//         const xContainerOffset = (evt.clientX - box.left) - selectedElement.DragData.x
+//         const x = (xContainerOffset / box.width) * svgWidth
+
+//         selectedElement.setAttributeNS(null, `x`, x)
+//         selectedElement.setAttributeNS(null, `y`, y)
+//     }
+// }
+
+// function EndDrag(selectedElement) {
+//     return function() {
+//         editorContainer.removeEventListener(`mousemove`, selectedElement._drag);
+//         window.removeEventListener(`mouseup`, selectedElement._endDrag);
+//         editorContainer.removeEventListener(`mouseleave`, selectedElement._endDrag)
+//         savePositions(selectedElement)
+//     }
+// }
+
+// function savePositions(selectedElement) {
+//     const svgBox = currentPageSvg().getBoundingClientRect()
+//     const box = selectedElement.getBoundingClientRect()
+//     const position = {
+//         x: selectedElement.getAttributeNS(null, `x`),
+//         y: selectedElement.getAttributeNS(null, `y`)
+//     }
+
+//     currentPage().elements[selectedElement.id].position = position
+//     selectedElement.DragData = position
+
+//     save()
+// }
+
+// function setCurrentElement(item) {
+
+//     if (!item) {
+//         currentElement = undefined
+//         updateStyleInputs(undefined, true)
+//         textText.value = ``
+//         elementsToHideIfNoCurrentElement.forEach(el => el.classList.add(`disabled`))
+
+//         return
+//     }
+
+//     currentElement = document.getElementById(item.id)
+//     updateStyleInputs(item.styles, true)
+//     textText.value = item.text
+//     elementsToHideIfNoCurrentElement.forEach(el => el.classList.remove(`disabled`))
+// }
+
+// function addTextElement(item, page) {
+//     const NS = `http://www.w3.org/2000/svg`
+//     const idToGet = `svg_page_${page.id}`
+//     const svgParent = document.getElementById(idToGet)
+//     const text = document.createElementNS(NS, `text`)
+
+//     if (!page.elements[item.id]) {
+//         page.elements[item.id] = item
+//     }
+
+//     svgParent.appendChild(text)
+//     text.class = `pdf-replacement-text`
+//     text.innerHTML = item.text
+//     text.id = item.id
+//     text.setAttributeNS(null, `x`, item.position.x)
+//     text.setAttributeNS(null, `y`, item.position.y)
+//     text.setAttributeNS(null, `text-anchor`, `start`)
+
+//     text.addEventListener(`click`, function(e) {
+//         e.preventDefault()
+//         e.stopPropagation()
+//         textText.value = text.textContent
+//         setCurrentElement(item)
+//     })
+
+//     const startDrag = StartDrag(text)
+//     text._drag = Drag(text)
+//     text._endDrag = EndDrag(text)
+//     text.addEventListener(`mousedown`, startDrag)
+//     applyElementStyles(item)
+//     save()
+// }
+
+// function addImageElement(item, page) {
+//     const NS = `http://www.w3.org/2000/svg`
+//     const idToGet = `svg_page_${page.id}`
+//     const svgParent = document.getElementById(idToGet)
+//     const img = document.createElementNS(NS, `image`)
+
+//     if (!page.elements[item.id]) {
+//         page.elements[item.id] = item
+//     }
+
+//     svgParent.appendChild(img)
+//     img.id = item.id
+//     img.setAttributeNS(null, `x`, item.position.x)
+//     img.setAttributeNS(null, `y`, item.position.y)
+//     img.setAttributeNS(null, `href`, item.url)
+
+//     img.addEventListener(`click`, function(e) {
+//         e.preventDefault()
+//         e.stopPropagation()
+//         setCurrentElement(item)
+//     })
+
+//     const startDrag = StartDrag(img)
+//     img._drag = Drag(img)
+//     img._endDrag = EndDrag(img)
+//     img.addEventListener(`mousedown`, startDrag)
+//     applyElementStyles(item)
+//     save()
+// }
+
+// function toPDF() {
+//     // const svg = currentPageSvg()
+//     // var s = new XMLSerializer().serializeToString(svg)
+//     // // const blob = new Blob([svg.outerHTML], {type: `image/svg+xml`})
+//     // // const url = URL.createObjectURL(blob);
+//     // // const doc = new PDFDocument()
+//     // // SVGtoPDF(doc, svg, 0,0)
+//     // var doc = new jsPDF()
+//     // // doc.fromHTML(svg, 0,0)
+//     // // doc.addSVG(svg, 0, 0)
+//     // doc.addImage(`data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(s)))}`,0,0)
+//     // // doc.addImage(url,0,0)
+//     // doc.save(`TestSVG.pdf`)
+// }
+
+// function toFile() {
+//     const svg = currentPageSvg()
+//     const blob = new Blob([svg.outerHTML], { type: `image/svg+xml` })
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement(`a`)
+//     a.setAttribute(`download`, true)
+//     a.href = url
+//     a.click()
+
+//     // window.open(url, `_blank`)
+
+//     var s = new XMLSerializer().serializeToString(svg)
+//     // const doc = new PDFDocument()
+//     // SVGtoPDF(doc, svg, 0,0)
+//     // var doc = new jsPDF()
+//     // doc.fromHTML(svg, 0,0)
+//     // doc.addSVG(svg, 0, 0)
+//     // doc.addImage(`data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(s)))}`,0,0)
+//     // doc.addImage(url,0,0)
+//     // doc.save(`TestSVG.pdf`)
+// }
+
+// page_number.addEventListener(`input`, () => {
+//     changePage(page_number.value)
+// })
+
+
+
+
+// open()
+
+*/

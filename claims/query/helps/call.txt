@@ -1,0 +1,113 @@
+-- DUMP --
+==========
+mongodump --host Cluster0-shard-0/cluster0-shard-00-00-cb5y8.mongodb.net:27017,cluster0-shard-00-01-cb5y8.mongodb.net:27017,cluster0-shard-00-02-cb5y8.mongodb.net:27017 --ssl --username ChrisSSL --password 1eatallthecookies --authenticationDatabase admin --db cai_settlements_claims
+
+mongodump --host Cluster0-shard-0/cluster0-shard-00-00-cb5y8.mongodb.net:27017,cluster0-shard-00-01-cb5y8.mongodb.net:27017,cluster0-shard-00-02-cb5y8.mongodb.net:27017 --ssl --username ChrisSSL --password 1eatallthecookies --authenticationDatabase admin --db cai_users
+
+mongodump --host Cluster0-shard-0/cluster0-shard-00-00-cb5y8.mongodb.net:27017,cluster0-shard-00-01-cb5y8.mongodb.net:27017,cluster0-shard-00-02-cb5y8.mongodb.net:27017 --ssl --username ChrisSSL --password 1eatallthecookies --authenticationDatabase admin --db vehicles
+
+
+
+-- BASIC --
+===========
+
+mongo --quiet ./scripts/get_claim_users.js > ./output/odd/claims.json
+
+mongo --quiet --eval 'ID="S0034";ATTN="c/o Epiq";ST="P.O. Box 10622";LOC="Dublin, OH 43017-9222"' ./scripts/get_claim_users_csv.js > ./output/odd/claims.json
+
+
+
+-- GET KEYS --
+=====================
+
+mongo cai_settlements_claims --quiet --eval \
+'DBQuery.shellBatchSize = 3000;
+printjson(Object.keys(db.claims.findOne()))' \
+ > ./output/settlements_keys.json
+
+ mongo cai_admin_dash --quiet --eval \
+'DBQuery.shellBatchSize = 3000;
+printjson(Object.keys(db.cai_statistics.findOne()))' \
+ > ./output/stats_keys.json
+
+
+
+-- GET SETTLEMENTS --
+=====================
+
+mongo cai_settlements_claims --quiet --eval \
+'DBQuery.shellBatchSize = 3000;
+db.settlements.find(
+    {}, 
+    { "settlement_id": 1, "settlement_name": 1, "settlement_short_name": 1, "settlement_timeline": 1 }
+)
+    .map(function (doc) {
+        var due = doc.settlement_timeline
+            .filter(function (d) { 
+                return d.dateName === "Claim Submission"; 
+            })[0].dateValue;
+        
+        delete doc.settlement_timeline;
+        return Object.assign(doc, { _id: doc._id.str, due }) 
+    });' \
+ > ./output/settlements.json
+
+
+-- GET RAW CLAIMS FOR SETTLEMENT --
+===============================
+
+mongo cai_settlements_claims --quiet --eval \
+'DBQuery.shellBatchSize = 3000;
+db.claims
+    .findOne({settlement_id: "S0034"});
+' \
+ > ./output/odd/claims_raw.json
+
+
+-- GET CLAIMS FOR SETTLEMENT --
+===============================
+
+mongo --quiet --eval \
+'DBQuery.shellBatchSize = 3000;
+
+var Claims = db.getSiblingDB('cai_settlements_claims')
+var Users = db.getSiblingDB('cai_users')
+
+var claims = Claims.claims
+    .find({settlement_id: "S0034"})
+    .map(function(doc){return doc.clientClaims;})[0]
+    .map(function(claim){
+        if(claim.claimData.numInternalDrives === "0" && claim.claimData.numExternalDrives === "0"){
+            return false
+        }
+
+        var user = Users.users.findOne({user_id: claim.user_id})
+
+        return {
+            _id: claim._id.str,
+            user: claim.users_id.str,
+            created: claim.createTS.toISOString(),
+            user_id: claim.user_id,
+            recipient: claim.recipient,
+            clientClaimID: claim.clientClaimID,
+            data: claim.claimData,
+            email: user.email_current,
+            name: user.fname + " " + user.lname,
+            first_name: user.fname,
+            last_name: user.lname,
+            terms_aggreement: user.client_YN === 1 ? user.terms_TS : false,
+            phone: user.phoneNumbers && Object.keys(user.phoneNumbers).length ? user.phoneNumbers[Object.keys(user.phoneNumbers)[0]] : false,
+            street: user.address ? user.address.street : false,
+            city: user.address ? user.address.city : false,
+            state: user.address ? user.address.state : false,
+            zip: user.address ? user.address.zip : false
+        }
+    })
+    .filter(function(c){return !!c && !!c.terms_aggreement});
+
+printjson({
+    count: claims.length,
+    claims: claims
+});
+' \
+ > ./output/odd/claims.json

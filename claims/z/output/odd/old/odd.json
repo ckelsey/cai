@@ -1,0 +1,101 @@
+{
+	"_id" : ObjectId("5c4dcd8c8030e30dd9cafe4b"),
+	"settlement_id" : "S0034",
+	"settlement_name" : "re Optical Disk Drive Products Antitrust Litigation",
+	"settlement_short_name" : "ODD",
+	"is_active" : "1",
+	"settlement_timeline" : [
+		{
+			"dateName" : "Settlement Filing Date",
+			"dateValue" : "2018-08-23T07:00:00.000Z"
+		},
+		{
+			"dateName" : "Preliminary Approval",
+			"dateValue" : "2018-09-18T07:00:00.000Z"
+		},
+		{
+			"dateName" : "Fairness Hearing",
+			"dateValue" : "2019-02-07T07:00:00.000Z"
+		},
+		{
+			"dateName" : "Exclusion",
+			"dateValue" : "2018-12-17T07:00:00.000Z"
+		},
+		{
+			"dateName" : "Objection",
+			"dateValue" : "2018-12-17T07:00:00.000Z"
+		},
+		{
+			"dateName" : "Claim Submission",
+			"dateValue" : "2019-06-28T07:00:00.000Z"
+		},
+		{
+			"dateName" : "Estimated Distribution Date",
+			"dateValue" : "2019-09-26T07:00:00.000Z"
+		}
+	],
+	"snapshot_create_TS" : "2018-12-19T07:00:00.000Z",
+	"settlement_finances" : [
+		{
+			"dataPointName" : "Pool Size",
+			"dataPointValue" : 205000000
+		},
+		{
+			"dataPointName" : "Class Pool After Fees",
+			"dataPointValue" : 153870000
+		},
+		{
+			"dataPointName" : "SA Fees",
+			"dataPointValue" : 3350000
+		},
+		{
+			"dataPointName" : "Class Counsel",
+			"dataPointValue" : 47780000
+		},
+		{
+			"dataPointName" : "Maximum Claim Value",
+			"dataPointValue" : 0
+		},
+		{
+			"dataPointName" : "Minimum Claim Value",
+			"dataPointValue" : 10
+		},
+		{
+			"dataPointName" : "Est average Payment",
+			"dataPointValue" : 20
+		},
+		{
+			"dataPointName" : "Est Fee value",
+			"dataPointValue" : 1
+		},
+		{
+			"dataPointName" : "Class Size",
+			"dataPointValue" : 200000000
+		},
+		{
+			"dataPointName" : "Settlement Payment Type",
+			"dataPointValue" : "Cash"
+		}
+	],
+	"CAA_calculations" : {
+		"user_base_at_creation" : 48000,
+		"est_pct_clients_participation" : 0.6667000000000001,
+		"est_items_per_client" : 3,
+		"est_amt_per_item" : 10,
+		"est_client_tot_$_amt" : 30,
+		"use_claimData_for_DAR" : "1",
+		"future_client_cnt" : 265675,
+		"integration_score" : 3262822,
+		"num_clients_filing" : 0.6667000000000001,
+		"months_remaining" : 6
+	},
+	"item_name" : "Device",
+	"item_name_plural" : "Devices",
+	"eligibility_criteria" : "Participation in any of the settlements is open to anyone who purchased a new computer with an internal ODD, a stand-alone ODD designed for internal use in a computer, or an ODD designed to be attached externally to a computer while a resident of AZ, CA, DC, FL, HI, KS, ME, MA, MI, MN, MO, MT, NE, NV, NH, NM, NY, NC, OR, TN, UT, VT, WV, or WI during the period of April 2003 to December 2008 for personal use and not for resale. ODD refers to a DVD-RW, DVD-ROM, or COMBO drive manufactured by one or more Defendants or their alleged conspirators.",
+	"settlement_doc_href" : "https://docs.classactioninc.com/S0034.pdf",
+	"settlement_doc_metaData" : {
+		"adminUser" : "5c391cc4cdb13aacd80c35fa",
+		"lastUpdateTS" : ISODate("2019-04-12T22:14:40.229Z")
+	},
+    "settlement_client_name" : "Optical Disk Drive Products Antitrust Litigation"
+}

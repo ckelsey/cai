@@ -1,0 +1,12 @@
+mongoexport \
+--uri "mongodb+srv://ChrisSSL:Evolt510@cluster0-cb5y8.mongodb.net/cai_users" \
+--collection users \
+-q '{"$and":[{"address.street":{"$ne":null}}, {"address.street":{"$exists":true}}, {"address.street":{"$ne":""}}, {"address.state":{"$ne":null}}, {"address.state":{"$exists":true}}, {"address.state":{"$ne":""}}, {"address.city":{"$ne":null}}, {"address.city":{"$exists":true}}, {"address.city":{"$ne":""}}, {"address.zip":{"$ne":null}}, {"address.zip":{"$exists":true}}, {"address.zip":{"$ne":""}}]}' \
+ --out /Users/chriskelsey/Sites/addresses.json
+
+
+ mongoexport \
+--uri "mongodb+srv://ChrisSSL:Evolt510@cluster0-cb5y8.mongodb.net/cai_users" \
+--collection users \
+-q '{"$or":[{"address.street":{"$eq":null}}, {"address.street":{"$exists":false}}, {"address.street":{"$eq":""}}, {"address.state":{"$eq":null}}, {"address.state":{"$exists":false}}, {"address.state":{"$eq":""}}, {"address.city":{"$eq":null}}, {"address.city":{"$exists":false}}, {"address.city":{"$eq":""}}, {"address.zip":{"$eq":null}}, {"address.zip":{"$exists":false}}, {"address.zip":{"$eq":""}}]}' \
+ --out /Users/chriskelsey/Sites/non_addresses.json

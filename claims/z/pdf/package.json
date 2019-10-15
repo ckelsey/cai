@@ -1,0 +1,9 @@
+{
+	"name": "app",
+	"description": "",
+	"version": "0.0.1",
+	"dependencies": {
+		"csvtojson": "^2.0.8",
+		"hummus": "^1.0.104"
+	}
+}

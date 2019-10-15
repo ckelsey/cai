@@ -1,0 +1,7 @@
+{
+    "name": "pdftemplaterapi",
+    "dependencies": {
+        "json2csv": "^4.5.2",
+        "mongodb": "^3.2.7"
+    }
+}

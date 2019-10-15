@@ -1,0 +1,2 @@
+2019-06-28T19:20:53.667-0700 E -        [main] Error saving history file: FileOpenFailed: Unable to open() file : No such file or directory
+2019-06-28T19:20:53.668-0700 I CONTROL  [main] shutting down with code:0

@@ -1,0 +1,234 @@
+
+
+
+// return getClaimsUsers(claims)
+// .then(users => {
+//     console.log(Object.keys(users).length, 'users retrieved')
+//     const result = processClaims(Claims, users, settlementData)
+//     console.log(result.length)
+//     console.log('Success')
+//     process.exit()
+
+//     // fs.writeFile(process.env.O, JSON.stringify(result), err => {
+//     //     if (err) {
+//     //         throw err
+//     //     }
+
+//     //     console.log('Success')
+//     //     process.exit()
+//     // })
+// })
+
+/**
+
+mongo --quiet --eval "var TYPE='CSV';var ID='S0034';var ATTN='c/o Epiq';var ST='P.O. Box 10622';var LOC='Dublin, OH 43017-9222';" ./scripts/get_claim_users.js > ./output/odd/claims.csv
+
+mongo --quiet --eval "var TYPE='json';var ID='S0034';var ATTN='c/o Epiq';var ST='P.O. Box 10622';var LOC='Dublin, OH 43017-9222';" ./scripts/get_claim_users.js > ./output/odd/claims.json
+
+**/
+
+/*
+MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
+    if (err) throw err;
+    var Claims = db.db("cai_settlements_claims");
+    // var Users = db.db("cai_users");
+
+    Claims.collection('settlements').findOne({ settlement_id }, function (err, settlement) {
+        Claims.collection('claims').find({ settlement_id }).toArray(function (err, claims) {
+            var done = 0
+            var check = () => {
+                if (done === claims.length) {
+                    claims = claims.filter(function (c) { return !!c });
+
+                    console.log('Writing: ', claims.length)
+
+                    var out = JSON.stringify(claims)
+                    fs.writeFile('ODD.json', out, (err) => {
+                        console.log('done')
+                    })
+                }
+            }
+            claims = claims.map(function (doc) { return doc.clientClaims; })[0]
+            claims.forEach((claim, cindex) => {
+                if (claim.claimData.numInternalDrives === "0" && claim.claimData.numExternalDrives === "0") {
+                    done = done + 1
+                    return check();
+                }
+
+                Users.collection('users').findOne({ user_id: claim.user_id }, function (err, user) {
+
+                    if (!user || !user.terms_TS) {
+                        done = done + 1
+                        return check();
+                    }
+
+                    if (!user.address ||
+                        (user.address &&
+                            (!user.address.zip || user.address.zip === ``) ||
+                            (!user.address.street || user.address.street === ``)
+                        )
+                    ) {
+                        user.address = CAIADDRESS
+                    }
+
+                    var len = 5 - user.address.zip.length
+                    while (len--) {
+                        user.address.zip = `${user.address.zip}0`
+                    }
+
+                    if (!user.phoneNumbers) {
+                        user.phoneNumbers = {}
+                    }
+
+                    var phone = user.phoneNumbers[Object.keys(user.phoneNumbers)[0]]
+
+                    if (phone) {
+                        phone = phone.replace(/[^0-9]/g, '')
+
+                        if (phone.length < 10) {
+                            phone = ''
+                        }
+
+                        if (phone.length > 10) {
+                            phone = phone.slice(-10)
+                        }
+                    } else {
+                        phone = CAIPHONE
+                    }
+
+                    var claimData = claim.claimData
+                    var internalHD = claimData.numInternalDrives
+                    var externalHD = claimData.numExternalDrives
+
+                    // if(type === 'csv'){
+                    //     try {
+                    //         claimData = JSON.stringify(claimData)
+                    //     } catch (error) {}
+                    // }
+
+                    function formatDate(d) {
+                        if (!d) {
+                            return ''
+                        }
+
+                        try {
+                            d = d.toJSON()
+                        } catch (error) { }
+
+                        if (typeof d === 'string') {
+                            return d
+                        }
+
+                        try {
+                            d = d.toISOString()
+                        } catch (error) { }
+
+                        if (typeof d === 'string') {
+                            return d
+                        }
+
+                        return `${d}`
+                    }
+
+
+
+                    var state = user.address.state
+                    if (state.length > 2) {
+                        state = Object.keys(states).filter(ab => states[ab].toLowerCase() === state.toLowerCase())[0]
+                        if (!state) {
+                            state = user.address.state
+                        }
+                    }
+
+                    state = state.toUpperCase()
+
+                    var res = {
+                        standalone: externalHD,
+                        computer: internalHD,
+                        contact,
+                        agent,
+                        agentTitle,
+                        ein: '81-5390648',
+                        date: '06-28-2019',
+                        company_name: company_name,
+                        company_street: company_street,
+                        company_location: company_location,
+                        case_name: settlement.settlement_name || '',
+                        created: formatDate(claim.createTS),
+                        db_id: claim._id.str || '',
+                        users_id: claim.users_id.str || '',
+                        gs_id: claim.user_id || '',
+                        client_claim_id: claim.clientClaimID || '',
+                        recipient: claim.recipient || '',
+                        email: (user.email_current ? user.email_current : user.email_original) || CAIEMAIL,
+                        claimant: (user.fname + " " + user.lname),
+                        first_name: user.fname || '',
+                        last_name: user.lname || '',
+                        agreement_date: formatDate(user.terms_TS),
+                        phone: phone,
+                        street: user.address.street,
+                        city: user.address.city,
+                        state: state,
+                        zip: user.address.zip,
+                        signup_source: user.signup_source || '',
+                        last_update_TS: formatDate(user.last_update_TS)
+                    }
+
+                    claims[cindex] = res
+                    done = done + 1
+
+                    check()
+                })
+            })
+        })
+    })
+})
+*/
+
+
+
+    // var claims = 
+
+    // if (type === 'json') {
+    //     // printjson({
+    //     //     count: claims.length,
+    //     //     claims: claims
+    //     // })
+    //     printjson(claims)
+    // } else {
+    //     print(
+    //         Object.keys(claims[0])
+    //             .map(function (key) {
+    //                 if (key && typeof key.indexOf === 'function' && key.indexOf(',') > -1) {
+    //                     key = '"' + key + '"'
+    //                 }
+
+    //                 return key
+    //             })
+    //             .join(',') +
+    //         "\n" +
+    //         claims
+    //             .map(function (claim) {
+    //                 return Object.keys(claims[0])
+    //                     .map(function (key) {
+    //                         var val = claim[key]
+    //                         if (val && typeof val.indexOf === 'function' && val.indexOf(',') > -1) {
+    //                             val = '"' + val + '"'
+    //                         }
+
+    //                         return val
+    //                     })
+    //                     .join(',')
+    //             })
+    //             .join("\n")
+    //     )
+    // }
+
+//   var settlement = Claims.settlements.findOne({ settlement_id })
+
+//   Claims.collection("customers").findOne({}, function(err, result) {
+//     if (err) throw err;
+//     console.log(result.name);
+//     db.close();
+//   });
+// });

@@ -1,0 +1,268 @@
+[
+	{
+		"_id" : "5c4dc42626949f0dd905418d",
+		"settlement_id" : "S0048",
+		"settlement_name" : "Lithium Ion Batteries Antitrust Litigation",
+		"settlement_short_name" : "LiPo",
+		"due" : "2019-07-19T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c4dcd8c8030e30dd9cafe4b",
+		"settlement_id" : "S0034",
+		"settlement_name" : "re Optical Disk Drive Products Antitrust Litigation",
+		"settlement_short_name" : "ODD",
+		"due" : "2019-06-28T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c4dd0b18030e30dd9cafe4c",
+		"settlement_id" : "S0108",
+		"settlement_name" : "Re: Takata Airbag Products Liability Litigation",
+		"settlement_short_name" : "Takata",
+		"due" : "2019-07-30T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c4e24b18030e30dd9cafe4d",
+		"settlement_id" : "S0580",
+		"settlement_name" : "re: Dial Complete Marketing and Sales Practices Litigation",
+		"settlement_short_name" : "Dial",
+		"due" : "2019-04-12T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c4e26138030e30dd9cafe4e",
+		"settlement_id" : "S0525",
+		"settlement_name" : "Pettit v. Procter & Gamble Co.",
+		"settlement_short_name" : "Charmin",
+		"due" : "2019-02-28T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c50ec45e14d1e4b94048a48",
+		"settlement_id" : "S0410",
+		"settlement_name" : "James Edwards v. Hearst Communications, Inc.",
+		"settlement_short_name" : "Hearst",
+		"due" : "2019-03-25T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c87cdf4230065ff66c1c801",
+		"settlement_id" : "S0080",
+		"settlement_name" : "Foothills/DeAnza Community College v. Northwest Pipe Co.",
+		"settlement_short_name" : "Poz-Loc",
+		"due" : "2019-06-07T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c87d8dd230065ff66c2b60b",
+		"settlement_id" : "S0120",
+		"settlement_name" : "BMV Overcharge Litigation (Tammy Raab v. Kent W. Abernathy, et al.)",
+		"settlement_short_name" : "BMV Overcharge",
+		"due" : "2019-06-30T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c885c6d3c636592a19a7038",
+		"settlement_id" : "S0522",
+		"settlement_name" : "Abante Rooter and Plumbing Inc. et al. v. Alarm.com Inc. et al.",
+		"settlement_short_name" : "Alarm.com TCPA",
+		"due" : "2019-04-16T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c88870a3a1690aeac233bf3",
+		"settlement_id" : "S0175",
+		"settlement_name" : "In re: Anthem Inc. Data Breach Litigation",
+		"settlement_short_name" : "Anthem Data",
+		"due" : "2019-02-01T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c8888ea3c636592a19d64e8",
+		"settlement_id" : "S0603",
+		"settlement_name" : "In re: Vizio Inc. Consumer Privacy Litigation",
+		"settlement_short_name" : "Vizio",
+		"due" : "2019-04-29T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c888c343c636592a19d97dd",
+		"settlement_id" : "S0585",
+		"settlement_name" : "In re: Arby’s Restaurant Group, Inc. Data Security Litigation",
+		"settlement_short_name" : "Arby's Data",
+		"due" : "2019-07-13T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c888de93a1690aeac23a6f5",
+		"settlement_id" : "S0613",
+		"settlement_name" : "MDL 2792 SAMSUNG TOP-LOAD WASHING MACHINE MARKETING, SALES PRACTICES AND PRODUCTS LIABILITY LITIGATION",
+		"settlement_short_name" : "Samsung Top Load",
+		"due" : "2019-08-06T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c888ef33c636592a19dc3b2",
+		"settlement_id" : "S0554",
+		"settlement_name" : "McAllister v. St. Louis Rams LLC",
+		"settlement_short_name" : "STL Rams",
+		"due" : "2019-08-23T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c888fd33c636592a19dd2df",
+		"settlement_id" : "S0534",
+		"settlement_name" : "Granillo, et al. v. FCA US LLC, et al.",
+		"settlement_short_name" : "Fiat Chrysler Transmissions",
+		"due" : "2019-05-15T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c8890cd3c636592a19de278",
+		"settlement_id" : "S0627",
+		"settlement_name" : "Brickman, et al. v. Fitbit Inc.",
+		"settlement_short_name" : "Fitbit",
+		"due" : "2019-05-30T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c8891be3a1690aeac23e57b",
+		"settlement_id" : "S0660",
+		"settlement_name" : "James L. Orrington II DDS PC v. Mesa Laboratories Inc., et al.",
+		"settlement_short_name" : "Mesa Labs",
+		"due" : "2019-04-15T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c8892753c636592a19dfca6",
+		"settlement_id" : "S0078",
+		"settlement_name" : "VW 3 Litre",
+		"settlement_short_name" : "VW 3L",
+		"due" : "2019-06-01T07:00:00.000Z"
+	},
+	{
+		"_id" : "5c8eee88d7f1cd85e62d4a71",
+		"settlement_id" : "S0686",
+		"settlement_name" : "Podawiltz v. Swisher International Inc., et al.",
+		"settlement_short_name" : "Swisher",
+		"due" : "2020-10-04T05:00:00.000Z"
+	},
+	{
+		"_id" : "5ca0da22855095bd038f4d03",
+		"settlement_id" : "S0912",
+		"settlement_name" : "Sebastian Gonzalez v. TCR Sports Broadcasting Holding, et al.",
+		"settlement_short_name" : "MASN Text TCPA",
+		"due" : "2019-07-15T07:00:00.000Z"
+	},
+	{
+		"_id" : "5ca0f97d855095bd039336e8",
+		"settlement_id" : "S0666",
+		"settlement_name" : "IN RE MORNING SONG BIRD FOOD LITIGATION ",
+		"settlement_short_name" : "Morning Song",
+		"due" : "2019-07-01T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cabf84b1709a1e686fc897c",
+		"settlement_id" : "S0569",
+		"settlement_name" : "In Re Experian Data Breach Litigation",
+		"settlement_short_name" : "Experian",
+		"due" : "2019-04-11T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cb9e246aa8d5674cb422fb3",
+		"settlement_id" : "S0625",
+		"settlement_name" : "Parker et al v. Universal Pictures et al",
+		"settlement_short_name" : "Warcraft TCPA",
+		"due" : "2019-07-06T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cba33a645cf7b00fba25e88",
+		"settlement_id" : "S0961",
+		"settlement_name" : "Robert Briseno v. Conagra Foods, Inc ",
+		"settlement_short_name" : "Wesson",
+		"due" : "2019-08-22T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cba389690fb238fac4a6097",
+		"settlement_id" : "S0658",
+		"settlement_name" : "Simerlein et al., v. Toyota Motor Corporation et al",
+		"settlement_short_name" : "Toyota Sliding Doors",
+		"due" : "2019-08-02T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cba41ed45cf7b00fba437b8",
+		"settlement_id" : "S0472",
+		"settlement_name" : "In re: Comcast Corp. Cable Television Box Antitrust Litigation",
+		"settlement_short_name" : "Comcast Box",
+		"due" : "2019-08-31T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cba75c345cf7b00fbaa1300",
+		"settlement_id" : "S0737",
+		"settlement_name" : "Guiette v. U.S. Bank National Association",
+		"settlement_short_name" : "US Bank National Association (TCPA)",
+		"due" : "2019-06-13T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cbc5b45fc6da8590937224f",
+		"settlement_id" : "S0689",
+		"settlement_name" : "Vigna v. Allstate Insurance Company",
+		"settlement_short_name" : "Allstate Insurance",
+		"due" : "2019-06-17T07:00:00.000Z"
+	},
+	{
+		"_id" : "5cc1d64a62e78d5e18b79114",
+		"settlement_id" : "S0945",
+		"settlement_name" : "O'Connor et al v. Uber Technologies, Inc. et al",
+		"settlement_short_name" : "Uber Litigation",
+		"due" : "2019-07-18T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cc1da5bbd3faaebb9b73c58",
+		"settlement_id" : "S0680",
+		"settlement_name" : "Subaru Engine Bearings",
+		"settlement_short_name" : "Subaru Engine Bearings",
+		"due" : "2019-05-22T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cc1db7013fac4d9e7af0a0e",
+		"settlement_id" : "S0812",
+		"settlement_name" : "Cubamax TCPA",
+		"settlement_short_name" : "Cubamax TCPA",
+		"due" : "2019-07-05T05:00:00.000Z"
+	},
+	{
+		"_id" : "5ccfa5c401e702258e3f3229",
+		"settlement_id" : "S0977",
+		"settlement_name" : "Tony Luib v. Henkel Consumer Goods Inc. ",
+		"settlement_short_name" : "Purex",
+		"due" : "2019-08-10T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cd0e84f7f052085c4c8a9bb",
+		"settlement_id" : "S0573",
+		"settlement_name" : "In re Chrysler-Dodge-Jeep EcoDiesel Marketing, Sales Practices and Products Liability Litigation",
+		"settlement_short_name" : "EcoDiesel - Chrysler-Dodge-Jeep",
+		"due" : "2019-08-01T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cd171ccc04558ef85f2183c",
+		"settlement_id" : "S0947",
+		"settlement_name" : "Rice-Redding et al v. Nationwide Mutual Insurance Company",
+		"settlement_short_name" : "Nationwide TCPA",
+		"due" : "2019-07-22T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cd6bafe8e232ac4f9d98954",
+		"settlement_id" : "S0800",
+		"settlement_name" : "Borecki v. Raymours Furniture Company, Inc.",
+		"settlement_short_name" : "Raymours Furniture TCPA",
+		"due" : "2019-06-22T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cd6cd944169adf6064000dd",
+		"settlement_id" : "S1014",
+		"settlement_name" : "Hamlen v. Gateway Energy Services Corporation",
+		"settlement_short_name" : "Gateway Energy",
+		"due" : "2019-08-01T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cdefaeea7bbcea9628aa4b0",
+		"settlement_id" : "S1015",
+		"settlement_name" : "Tran, et al. v. Good Health Natural Products Inc. ",
+		"settlement_short_name" : "Good Health Snack Settlement",
+		"due" : "2019-11-02T05:00:00.000Z"
+	},
+	{
+		"_id" : "5cdf517e5a4c052dc51801e9",
+		"settlement_id" : "S1025",
+		"settlement_name" : "Utz Foods (DiFrancesco)",
+		"settlement_short_name" : "Utz Foods",
+		"due" : "2019-07-28T05:00:00.000Z"
+	}
+]

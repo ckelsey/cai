@@ -1,0 +1,7 @@
+{
+    "name": "pdf2svg",
+    "dependencies": {
+        "inkscape": "^2.0.0",
+        "pdfjs-dist": "^2.0.943"
+    }
+}

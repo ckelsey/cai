@@ -1,0 +1,1 @@
+DBQuery.shellBatchSize = 3000; db.settlements.find({}, { "settlement_id": 1, "settlement_name": 1, "settlement_short_name": 1, "settlement_timeline": 1 }).map(function (doc) { var due = doc.settlement_timeline.filter(function (d) { return d.dateName === "Claim Submission"; })[0].dateValue; delete doc.settlement_timeline; return Object.assign(doc, { _id: doc._id.str, due }) });

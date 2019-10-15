@@ -1,0 +1,9 @@
+[
+	"_id",
+	"settlement_id",
+	"clientClaims",
+	"inelgibleClients",
+	"clientOptOuts",
+	"emailContent",
+	"cost_per_item"
+]

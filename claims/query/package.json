@@ -1,0 +1,7 @@
+{
+    "name": "mong",
+    "dependencies": {
+        "json2csv": "^4.5.1",
+        "mongodb": "^3.2.7"
+    }
+}

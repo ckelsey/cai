@@ -1,0 +1,2340 @@
+<html class="js " lang="en">
+  <!--<!
+  [endif]--><head>
+    <meta charset="utf-8" />
+
+    <title>Class Action, Inc.</title>
+
+    <meta
+      name="description"
+      content="Get Money You’re Owed From Class Action Lawsuits. Class Action, Inc. allows you to file more claims so you can collect more money. Claim What’s Yours."
+    />
+    <meta name="author" content="Class Action, Inc." />
+    <meta name="robots" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=0"
+    />
+
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link
+      rel="shortcut icon"
+      href="https://test.classactioninc.com/favicon.png"
+    />
+    <!--<link rel="apple-touch-icon" href="img/icon57.png" sizes="57x57">
+            <link rel="apple-touch-icon" href="img/icon72.png" sizes="72x72">
+            <link rel="apple-touch-icon" href="img/icon76.png" sizes="76x76">
+            <link rel="apple-touch-icon" href="img/icon114.png" sizes="114x114">
+            <link rel="apple-touch-icon" href="img/icon120.png" sizes="120x120">
+            <link rel="apple-touch-icon" href="img/icon144.png" sizes="144x144">
+            <link rel="apple-touch-icon" href="img/icon152.png" sizes="152x152">
+            <link rel="apple-touch-icon" href="img/icon180.png" sizes="180x180">-->
+    <!-- END Icons -->
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://test.classactioninc.com/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://test.classactioninc.com/css/plugins.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://test.classactioninc.com/css/main.css?v=1557271431.45"
+    />
+    <link
+      rel="stylesheet"
+      href="https://test.classactioninc.com/css/themes.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://test.classactioninc.com/css/styles.css?v=1557271431.45"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- END Stylesheets -->
+
+    <!-- Modernizr (browser feature detection library) -->
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script async="" src="https://a.quora.com/qevents.js"></script>
+    <script
+      src="https://connect.facebook.net/signals/config/2223345544657552?v=2.8.47&amp;r=stable"
+      async=""
+    ></script>
+    <script
+      src="https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.47"
+      async=""
+    ></script>
+    <script
+      src="https://connect.facebook.net/signals/config/1565099903534179?v=2.8.47&amp;r=stable"
+      async=""
+    ></script>
+    <script
+      async=""
+      src="https://connect.facebook.net/en_US/fbevents.js"
+    ></script>
+    <script src="http://bat.bing.com/bat.js" async=""></script>
+    <script
+      async=""
+      src="https://chimpstatic.com/mcjs-connected/js/users/db9cb1341159e67cd255c5f22/2b8777ff31190e1390c3ae53d.js"
+    ></script>
+    <script src="https://test.classactioninc.com/js/vendor/modernizr.min.js"></script>
+  </head>
+  <body>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-99628832-5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-99628832-5");
+    </script>
+    <script id="mcjs">
+      !(function(c, h, i, m, p) {
+        (m = c.createElement(h)),
+          (p = c.getElementsByTagName(h)[0]),
+          (m.async = 1),
+          (m.src = i),
+          p.parentNode.insertBefore(m, p);
+      })(
+        document,
+        "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/db9cb1341159e67cd255c5f22/2b8777ff31190e1390c3ae53d.js"
+      );
+    </script>
+    <script>
+      function uuidv4() {
+        if (crypto) {
+          return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+            (
+              c ^
+              (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+            ).toString(16)
+          );
+        } else {
+          return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+            /[xy]/g,
+            function(c) {
+              var r = (Math.random() * 16) | 0,
+                v = c == "x" ? r : (r & 0x3) | 0x8;
+              return v.toString(16);
+            }
+          );
+        }
+      }
+
+      var cai_uuid = uuidv4();
+      console.log(cai_uuid);
+
+      var uid = sessionStorage.getItem("uid");
+      if (uid === undefined || uid == "" || uid == null) {
+        sessionStorage.setItem("uid", cai_uuid);
+        uid = sessionStorage.getItem("uid");
+      }
+      console.log(uid);
+
+      async function getIP() {
+        try {
+          const resp = await window.fetch(
+            "https://ipinfo.io/json?token=d3923202237e4d"
+          );
+          let result = {};
+          if (resp) {
+            result = await resp.json();
+          }
+
+          let postData = {
+            url: encodeURI(window.location.href),
+            ip: result,
+            cai_uuid: uid,
+            userAgent: navigator.userAgent
+          };
+
+          x = new XMLHttpRequest();
+          x.open(
+            "POST",
+            "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/cai_auth-tgtyd/service/cai_svc_external/incoming_webhook/trafficGatekeeper?secret=7e5937bcf7cd23fd17e4"
+          );
+          x.send(JSON.stringify(postData));
+          x.onreadystatechange = function() {
+            if (x.readyState != 4) return;
+            console.log(x.status);
+          };
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      if (!navigator.userAgent.match(/bot|spider/i)) {
+        getIP();
+      }
+    </script>
+    <!-- Bing UET -->
+    <script>
+      (function(w, d, t, r, u) {
+        var f, n, i;
+        (w[u] = w[u] || []),
+          (f = function() {
+            var o = { ti: "25042834" };
+            (o.q = w[u]), (w[u] = new UET(o)), w[u].push("pageLoad");
+          }),
+          (n = d.createElement(t)),
+          (n.src = r),
+          (n.async = 1),
+          (n.onload = n.onreadystatechange = function() {
+            var s = this.readyState;
+            (s && s !== "loaded" && s !== "complete") ||
+              (f(), (n.onload = n.onreadystatechange = null));
+          }),
+          (i = d.getElementsByTagName(t)[0]),
+          i.parentNode.insertBefore(n, i);
+      })(window, document, "script", "http://bat.bing.com/bat.js", "uetq");
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+
+      fbq("init", "1565099903534179");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1565099903534179&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "2223345544657552");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=2223345544657552&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <script>
+      fbq("track", "ViewContent", {
+        value: 0,
+        currency: "USD"
+      });
+    </script>
+    <!-- DO NOT MODIFY -->
+    <!-- Quora Pixel Code (JS Helper) -->
+    <script>
+      !(function(q, e, v, n, t, s) {
+        if (q.qp) return;
+        n = q.qp = function() {
+          n.qp ? n.qp.apply(n, arguments) : n.queue.push(arguments);
+        };
+        n.queue = [];
+        t = document.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = document.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, "script", "https://a.quora.com/qevents.js");
+      qp("init", "f8e9573a85dd404b98f4cf2c60afeb37");
+      qp("track", "ViewContent");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://q.quora.com/_/ad/f8e9573a85dd404b98f4cf2c60afeb37/pixel?tag=ViewContent&noscript=1"
+    /></noscript>
+    <!-- End of Quora Pixel Code -->
+    <!-- Page Container -->
+    <!-- In the PHP version you can set the following options from inc/config file -->
+    <!-- 'boxed' class for a boxed layout -->
+    <div id="page-container">
+      <!-- Site Header -->
+      <header>
+        <div class="container">
+          <!-- Site Logo -->
+          <a href="/" class="site-logo mw-300">
+            <img
+              src="https://test.classactioninc.com/img/cai_hdr_logo.png"
+              class="full-width"
+            />
+          </a>
+          <!-- Site Logo -->
+
+          <!-- Site Navigation -->
+          <nav>
+            <!-- Menu Toggle -->
+            <!-- Toggles menu on small screens -->
+            <a
+              href="javascript:void(0)"
+              class="btn btn-default site-menu-toggle visible-xs visible-sm"
+            >
+              <i class="fa fa-bars"></i>
+            </a>
+            <!-- END Menu Toggle -->
+
+            <!-- Main Menu -->
+            <ul class="site-nav">
+              <!-- Toggles menu on small screens -->
+              <li class="visible-xs visible-sm">
+                <a
+                  href="javascript:void(0)"
+                  class="site-menu-toggle text-center"
+                >
+                  <i class="fa fa-times"></i>
+                </a>
+              </li>
+              <!-- END Menu Toggle -->
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/#howitworks">How it Works</a>
+              </li>
+              <li>
+                <a href="/blog/">Blog</a>
+              </li>
+              <li>
+                <a href="/contact/">Contact</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" id="support" class="site-nav-sub"
+                  >Support<i class="fa fa-angle-down site-nav-arrow"></i
+                ></a>
+                <ul>
+                  <li>
+                    <a href="/faq/">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="/ticket/">Support Ticket</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/login/" class="btn btn-primary">Log In</a>
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-success btn-start btn-signup"
+                  >Sign Up</a
+                >
+              </li>
+            </ul>
+            <!-- END Main Menu -->
+          </nav>
+          <!-- END Site Navigation -->
+        </div>
+      </header>
+      <!-- END Site Header -->
+      <!-- <section class="site-section site-section-light site-section-top themed-background-default">
+            <div class="container">
+                <h1 class="text-center animation-slideDown">Settlement Eligibility</h1>
+                <h2 class="h3 text-center animation-slideUp">Check to see if your vehicles are eligible for class action settlements!</h2>
+            </div>
+    </section> -->
+      <section
+        class="site-content site-section"
+        style="height:auto;background:#FFF;min-height:600px"
+      >
+        <div class="container" style="margin-top:35px;">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <img
+                src="https://test.classactioninc.com/img/AutoClarenceWeb.png"
+                class="img-responsive center-img"
+              />
+              <br />
+              <p class="text-center animation-slideUp nunito" id="header-text">
+                Check to see if your vehicles are eligible for class action
+                settlements!
+              </p>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <!-- <div class="row">
+                    <div class="col-md-12">
+                    <div class="pull-right">
+                        <span class="ml-2"><b>VIN Entry</b>
+                        <label class="switch switch-primary"
+                            ><input
+                            type="checkbox"
+                            checked=""
+                            id="searchType"/><span></span
+                        ></label>
+                        <b>Make/Model/Year</b></span
+                        >
+                    </div>
+                    </div>
+                </div> -->
+          <div class="vehicle-tabs">
+            <div class="vehicle-tabs-inner">
+              <div class="vehicle-tab-highlight"></div>
+              <div class="vehicle-tab">Upload VIN</div>
+              <div class="vehicle-tab">Vehicle search</div>
+              <div class="vehicle-tab">Enter VIN</div>
+            </div>
+          </div>
+          <div class="row mt40 vehicle-tabs-content">
+            <div class="vehicle-tab-content">
+              <div id="dropit">
+                <p class="nunito-plain">
+                  <span id="faspan" class="fa-stack" style="cursor:pointer;">
+                    <i
+                      class="fa fa-circle fa-stack-2x"
+                      style="color: #f9fafc;"
+                    ></i>
+                    <i
+                      class="fa fa-question fa-stack-1x"
+                      style="color:#717171"
+                    ></i>
+                  </span>
+                  &nbsp; <b>How to find my VIN</b>
+                </p>
+                <form
+                  action="fileUpload.php"
+                  class="dropzone dz-clickable"
+                  id="drop"
+                  name="drop"
+                >
+                  <div class="dz-default dz-message">
+                    <span>Drop files here to upload</span>
+                  </div>
+                </form>
+                <div class="vehicle-form-inner mt30">
+                    <button
+                    type="button"
+                    class="btn btn-success btn-start"
+                    id="dropSubmit"
+                    >
+                    See if you're eligible
+                    </button>
+                </div>
+              </div>
+            </div>
+            <div class="vehicle-tab-content">
+              <form
+                action="#"
+                method="post"
+                class="form-horizontal"
+                id="vehicle-form"
+                onsubmit="return false;"
+              >
+                <div class="vehicle-form-inner">
+                  <div class="vehicle-form-item">
+                    <select
+                      id="makeSelect"
+                      name="make"
+                      class="select-chosen"
+                      data-placeholder="Choose a Make.."
+                      style="width: 250px;"
+                      onchange="changeMake(this)"
+                    >
+                      <option value="Value"></option>
+                    </select>
+                  </div>
+                  <div class="vehicle-form-item">
+                    <select
+                      id="model"
+                      name="model"
+                      class="select-chosen"
+                      data-placeholder="Choose a Model.."
+                      style="width: 250px;"
+                      multiple
+                    >
+                      <option value="United States">Ford</option>
+                      <option value="United Kingdom">Chevy</option>
+                      <option value="Afghanistan">BMW</option>
+                      <option value="Aland Islands">Audi</option>
+                      <option value="Albania">Mercedes</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="American Samoa">American Samoa</option>
+                      <option value="Andorra">Andorra</option>
+                    </select>
+                  </div>
+                  <div class="vehicle-form-item">
+                    <select
+                      id="year"
+                      name="year"
+                      class="select-chosen"
+                      data-placeholder="Choose an Year.."
+                      style="width: 250px;"
+                      multiple
+                    >
+                      <option value="United States">Ford</option>
+                      <option value="United Kingdom">Chevy</option>
+                      <option value="Afghanistan">BMW</option>
+                      <option value="Aland Islands">Audi</option>
+                      <option value="Albania">Mercedes</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="American Samoa">American Samoa</option>
+                      <option value="Andorra">Andorra</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="vehicle-form-inner mt30">
+                  <button
+                    type="button"
+                    class="btn btn-success btn-start"
+                    onclick="addClick()"
+                  >
+                    See if you're eligible
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="vehicle-tab-content"></div>
+          </div>
+          <style>
+            .vehicle-tabs-content {
+              opacity: 0;
+              transition: opacity 0.2s;
+            }
+            .vehicle-tabs-content.active {
+              opacity: 1;
+            }
+
+            .vehicle-tab-content {
+              opacity: 0;
+              max-height: 0px;
+              overflow: hidden;
+              height: auto;
+              transition: opacity 0.2s, max-height 0.2s;
+            }
+            .vehicle-tab-content.opening {
+              opacity: 1;
+              max-height: 100vh;
+            }
+            .vehicle-tab-content.active {
+              opacity: 1;
+              max-height: unset;
+              overflow: visible;
+            }
+            .vehicle-tabs {
+              position: relative;
+              display: flex;
+              justify-content: center;
+            }
+            .vehicle-tabs-inner {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 35px;
+              opacity: 0;
+              transition: opacity 0.2s;
+            }
+
+            .vehicle-tabs-inner.active {
+              opacity: 1;
+            }
+
+            .vehicle-tab {
+              padding: 0.5rem 1rem;
+              opacity: 0.5;
+              cursor: pointer;
+              font-size: 1.6rem;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              transition: font-size 0.2s, opacity 0.2s, color 0.2s,
+                padding-right 0.2s, padding-left 0.2s;
+            }
+
+            .vehicle-tab.active {
+              /* padding: 0.5rem 1.2rem; */
+              opacity: 1;
+              /* font-size: 1.7rem; */
+              color: #fff;
+            }
+
+            .vehicle-form-inner {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .vehicle-form-item {
+              width: 100%;
+              padding: 1rem;
+            }
+
+            .vehicle-tab-highlight {
+              position: absolute;
+              bottom: 0px;
+              left: 0px;
+              background: #2c9bc9;
+              width: 100%;
+              height: 100%;
+              border-radius: 40px;
+              /* border-bottom: 3px solid #2c9bc9; */
+              transition: width 0.2s, left 0.2s;
+            }
+
+            .vehicle-tab-content .dropzone.dz-clickable {
+              position: relative;
+              display: block;
+              overflow: hidden;
+              padding: 0 0 0 8px;
+              height: 34px;
+              border: 1px solid #dbe1e8;
+              background-color: #ffffff;
+              text-decoration: none;
+              white-space: nowrap;
+              line-height: 24px;
+              border-radius: 4px;
+              color: #394263;
+            }
+
+            .vehicle-tab-content .dz-default.dz-message {
+              margin: 0px;
+              font-size: 100%;
+              text-align: left;
+              opacity: 0.7;
+              font-weight: normal;
+              padding-top: 4px;
+            }
+
+            .vehicle-tab-content .dz-preview.dz-file-preview{
+
+            }
+          </style>
+          <script>
+            var tabsContentContainer = document.body.querySelector(
+              ".vehicle-tabs-content"
+            );
+            var tabsContent = document.body.querySelectorAll(
+              ".vehicle-tab-content"
+            );
+            var container = document.body.querySelector(".vehicle-tabs-inner");
+            var tabs = document.body.querySelectorAll(".vehicle-tab");
+            var highlight = document.body.querySelector(
+              ".vehicle-tab-highlight"
+            );
+            var index = 0;
+
+            function moveTabHighlight(ind) {
+              tabsContentContainer.classList.add("active");
+              container.classList.add("active");
+              var containerBox = container.getBoundingClientRect();
+              var tabBox = tabs[ind].getBoundingClientRect();
+
+              highlight.style.left = tabBox.left - containerBox.left + "px";
+              highlight.style.width = tabBox.width + "px";
+            }
+
+            while (index < tabs.length) {
+              (function(ind) {
+                tabs[ind].addEventListener("click", function() {
+                  var i = 0;
+                  var selectedIndex = 0;
+
+                  while (i < tabs.length) {
+                    if (i === ind) {
+                      selectedIndex = i;
+                      tabs[i].classList.add("active");
+                      tabsContent[i].classList.add("opening");
+                      moveTabHighlight(i);
+                    } else {
+                      tabs[i].classList.remove("active");
+                      tabsContent[i].classList.remove("active");
+                      tabsContent[i].classList.remove("opening");
+                    }
+
+                    i = i + 1;
+                  }
+
+                  setTimeout(function() {
+                    tabsContent[selectedIndex].classList.add("active");
+                    tabsContent[selectedIndex].classList.remove("opening");
+                  }, 400);
+                });
+              })(index);
+              index = index + 1;
+            }
+
+            setTimeout(function() {
+              tabs[1].click();
+            }, 200);
+          </script>
+          <div
+            id="fileclaim-modal"
+            class="modal fade mt5"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog mt5">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h2
+                    id="legal-terms-title"
+                    class="modal-title display-inline text-primary"
+                  >
+                    <strong>Nice! Looks like you may be eligible.</strong>
+                  </h2>
+                </div>
+                <div class="modal-body text-center">
+                  <div id="termsBody" style="display:none;">
+                    <img
+                      src="https://test.classactioninc.com/img/FileHappy.png"
+                      class="img-responsive center-img"
+                      style="max-height:300px"
+                    />
+                    <p class="nunito">
+                      I'll help you file your claims! Do you already have an
+                      account with us?
+                    </p>
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-primary"
+                      id="loginButton"
+                      >Log In</a
+                    >
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-success btn-start"
+                      id="signupButton"
+                      >Sign Up</a
+                    >
+                  </div>
+
+                  <div id="logForm" style="display:none">
+                    <form id="form-log-in" class="form-horizontal">
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <div class="input-group">
+                            <span class="input-group-addon"
+                              ><i class="gi gi-envelope"></i
+                            ></span>
+                            <input
+                              type="email"
+                              id="login-email"
+                              name="login-email"
+                              class="form-control input-lg"
+                              placeholder="Email"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group loginUI animation-pullDown">
+                        <div class="col-xs-12">
+                          <div class="input-group">
+                            <span class="input-group-addon"
+                              ><i class="fa fa-lock"></i
+                            ></span>
+                            <input
+                              type="password"
+                              id="login-password"
+                              name="login-password"
+                              class="form-control input-lg"
+                              placeholder="Password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group form-actions">
+                        <div class="col-xs-6">
+                          <div class="loginUI animation-pullDown">
+                            <label class="switch switch-primary">
+                              <input
+                                type="checkbox"
+                                id="login-remember-me"
+                                name="login-remember-me"
+                                checked=""
+                              /><span></span>
+                            </label>
+                            <small>Remember me</small>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <button
+                            id="theButton"
+                            type="submit"
+                            class="btn btn-sm btn-primary"
+                          >
+                            <i class="fa fa-arrow-right"></i> Login
+                          </button>
+                          <input type="hidden" id="uiFlag" value="0" />
+                        </div>
+                      </div>
+                      <div class="form-group"></div>
+                    </form>
+                    <div class="text-center">
+                      <a href="javascript:void(0)" id="createAccount"
+                        ><strong>Don't have an account?</strong></a
+                      >
+                      <a
+                        id="reset-pass"
+                        href="javascript:void(0)"
+                        class="ml50 loginUI"
+                        ><strong>Forgot password?</strong></a
+                      >
+                      <a
+                        id="login-pass"
+                        href="javascript:void(0)"
+                        class="ml50 hidden resetUI"
+                        ><strong>Login</strong></a
+                      >
+                    </div>
+                  </div>
+
+                  <div id="signForm" style="display:none">
+                    <form id="form-sign-up" class="form-horizontal">
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <div class="input-group">
+                            <span class="input-group-addon"
+                              ><i class="gi gi-envelope"></i
+                            ></span>
+                            <input
+                              type="email"
+                              id="signup-email"
+                              name="signup-email"
+                              class="form-control input-lg"
+                              placeholder="Email"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group loginUI animation-pullDown">
+                        <div class="col-xs-12">
+                          <div class="input-group">
+                            <span class="input-group-addon"
+                              ><i class="fa fa-user"></i
+                            ></span>
+                            <input
+                              type="text"
+                              id="signup-first-name"
+                              name="signup-first-name"
+                              class="form-control input-lg"
+                              placeholder="First Name"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group loginUI animation-pullDown">
+                        <div class="col-xs-12">
+                          <div class="input-group">
+                            <span class="input-group-addon"
+                              ><i class="fa fa-user"></i
+                            ></span>
+                            <input
+                              type="text"
+                              id="signup-last-name"
+                              name="signup-last-name"
+                              class="form-control input-lg"
+                              placeholder="Last Name"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group form-actions">
+                        <div class="col-xs-6"></div>
+                        <div class="col-xs-6 text-right">
+                          <button
+                            id="signUpClick"
+                            type="submit"
+                            class="btn btn-sm btn-primary"
+                          >
+                            <i class="fa fa-arrow-right"></i> Sign Up
+                          </button>
+                          <input type="hidden" id="uiFlag" value="0" />
+                        </div>
+                      </div>
+                      <div class="form-group"></div>
+                      <div class="text-center">
+                        <a href="javascript:void(0)" id="haveAccount"
+                          ><strong>Already have an account?</strong></a
+                        >
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="row mt30" id="claimDiv" style="display:none">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                      <div class="table-responsive">
+                        <table
+                          id="claim-table"
+                          class="table table-striped table-vcenter"
+                        >
+                          <thead>
+                            <tr>
+                              <th class="headFont">Make</th>
+                              <th class="headFont">Model</th>
+                              <th class="headFont">Year</th>
+                              <th class="headFont">VIN</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                      <br />
+                      <a
+                        href="javascript:void(0)"
+                        class="btn btn-success btn-start"
+                        style="margin-top:10px;"
+                        id="claimSubmit"
+                        >Submit Claim</a
+                      >
+                    </div>
+                    <div class="col-md-3"></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-sm btn-primary"><strong>Save</strong></button>
+                    <button type="button" class="btn btn-sm btn-info" data-dismiss="modal"><strong>Cancel<strong></button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="vininfo-modal"
+            class="modal fade mt5"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog mt5">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h2
+                    id="legal-terms-title"
+                    class="modal-title display-inline text-primary"
+                  >
+                    <strong>Find your VIN number</strong>
+                  </h2>
+                </div>
+                <div class="modal-body text-center">
+                  <div id="number">
+                    <img
+                      src="https://test.classactioninc.com/img/VINPIC.png"
+                      class="img-responsive center-img"
+                      style="max-height:300px"
+                    />
+                  </div>
+                  <div id="find" style="display:none">
+                    <img
+                      src="https://test.classactioninc.com/img/VIN_PIC_002.jpg"
+                      class="img-responsive center-img"
+                      style="max-height:300px"
+                    />
+                  </div>
+                </div>
+                <div class=" modal-footer" style="text-align:center">
+                  <a
+                    href="javascript:void(0);"
+                    class="btn btn-primary"
+                    id="close"
+                    >Close</a
+                  >
+                  &nbsp;<a
+                    href="javascript:void(0);"
+                    id="options"
+                    style="color:#25274d"
+                    >MORE OPTIONS</a
+                  >
+                  <!-- <button type="button" class="btn btn-sm btn-primary"><strong>Save</strong></button>
+                    <button type="button" class="btn btn-sm btn-info" data-dismiss="modal"><strong>Cancel<strong></button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <table
+            id="claims-listing"
+            class="table table-vcenter table-condensed table-hover"
+          ></table>
+        </div>
+      </section>
+
+      <div
+        id="legal-modal"
+        class="modal fade mt5"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg mt5">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h2
+                id="legal-terms-title"
+                class="modal-title display-inline text-primary"
+              >
+                <strong>Terms of Service for Class Action, Inc.</strong>
+              </h2>
+              <h2
+                id="legal-privacy-title"
+                class="modal-title display-inline text-primary hidden"
+              >
+                <strong>Privacy Policy for Class Action, Inc.</strong>
+              </h2>
+              <h2
+                id="legal-userAgree-title"
+                class="modal-title display-inline text-primary hidden"
+              >
+                <strong>User Agreement for Class Action, Inc.</strong>
+              </h2>
+              <div class="pull-right mt10">
+                <div class="col-xs-12 text-right">
+                  <button
+                    type="button"
+                    id="cancelClientEdit"
+                    class="btn btn-sm btn-primary ml10"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body" id="editClientBody">
+              <div id="legal-text-terms" class="hidden">
+                <span class="text-theme-dark-navy"
+                  ><strong>Legal Information is NOT Legal Advice</strong></span
+                >
+                <br /><span
+                  >This site provides information and open source news about
+                  legal proceedings, the law and class action lawsuit
+                  settlements as a Resource to provide content and concepts for
+                  users to address their needs. Legal information is NOT the
+                  same as legal advice – the application of law to an
+                  individual’s specific circumstances. Although we go to great
+                  lengths to make sure our information is accurate and useful,
+                  we recommend you consult a lawyer if you want professional
+                  assurance that our information, and your interpretation of it,
+                  is appropriate to your particular situation. You should
+                  consider all postings or writings at ClassActionInc.com by
+                  staff or others as personal opinion only and NOT the advice of
+                  a lawyer.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Non-commercial Use by Members</strong></span
+                >
+                <br /><span
+                  >The Resources are for personal use only. Users may not use
+                  the Resources in connection with any commercial endeavors.
+                  Organizations, companies, agencies, and/or businesses may not
+                  become registrants and should not use the Resources for any
+                  purpose. Illegal and/or unauthorized uses of the Resources,
+                  including collecting usernames and/or email addresses of users
+                  by electronic or other means for the purpose of sending
+                  unsolicited email and unauthorized framing of or linking to
+                  the Resources may be investigated, and appropriate legal
+                  action may be taken, including without limitation, civil,
+                  criminal, and injunctive redress.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Copyrights/Trademarks</strong></span
+                >
+                <br /><span
+                  >All Resources, content and materials available on
+                  ClassActionInc.com including but not limited to text,
+                  graphics, website name, code, images and logos are the
+                  intellectual property of Class Action, Inc. and are protected
+                  by applicable copyright and trademark law. Any inappropriate
+                  use, including but not limited to the reproduction,
+                  distribution, display or transmission of any content on this
+                  site is strictly prohibited, unless specifically authorized by
+                  Class Action, Inc.
+                </span>
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Governing Law</strong></span
+                >
+                <br /><span
+                  >This website is controlled by Class Action, Inc. from our
+                  offices located in the state of CA, USA. It can be accessed by
+                  most countries around the world. As each country has laws that
+                  may differ from those of CA, by accessing our website, you
+                  agree that the statutes and laws of CA, without regard to the
+                  conflict of laws and the United Nations Convention on the
+                  International Sales of Goods, will apply to all matters
+                  relating to the use of this website and the purchase of any
+                  products or services through this site. Furthermore, any
+                  action to enforce this User Agreement shall be brought in the
+                  federal or state courts located in USA, CA. You hereby agree
+                  to personal jurisdiction by such courts, and waive any
+                  jurisdictional, venue, or inconvenient forum objections to
+                  such courts.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Communications</strong></span
+                >
+                <br /><span
+                  >By using our websites and/or the Platform, you consent to
+                  receiving electronic and print communications from us. These
+                  communications may include notices about applicable fees and
+                  charges, transactional information and other information
+                  concerning or related to the website and/or Platform. These
+                  communications are part of your relationship with us. You
+                  agree that any notices, agreements, disclosures or other
+                  communications that we send you electronically or via
+                  traditional mail services will satisfy any legal communication
+                  requirements, including that such communications be in
+                  writing.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Registration and security</strong></span
+                >
+                <br /><span
+                  >Some aspects of the Services, may require you to register
+                  with Class Action, Inc. and set a password and user name
+                  (“User ID”). You shall provide Class Action, Inc. with
+                  accurate, complete, and updated registration information.
+                  Failure to do so shall constitute a breach of this Agreement,
+                  which may result in immediate termination of your account. You
+                  may not (i) select or use as a User ID a name of another
+                  person with the intent to impersonate that person; or (ii) use
+                  as a User ID a name subject to any rights of a person other
+                  than you without appropriate authorization. Class Action, Inc.
+                  reserves the right to refuse registration of or cancel a User
+                  ID in its discretion. You shall be responsible for maintaining
+                  the confidentiality of your password.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Fees and payment</strong></span
+                >
+                <br /><span
+                  >Class Action, Inc. reserves the right to require payment of
+                  fees for certain or all Services. You shall pay all applicable
+                  fees, as described on the Website in connection with such
+                  Services selected by you. Class Action, Inc. reserves the
+                  right to change its price list and to institute new charges at
+                  any time, upon notice to you, which may be sent by email or
+                  posted on the Website. Your use of the Services following such
+                  notification constitutes your acceptance of any new or
+                  increased charges. Any fees paid hereunder are
+                  non-refundable.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Proprietary rights</strong></span
+                >
+                <br /><span
+                  >You agree that all Resources and Materials are protected by
+                  copyright, trademark, and other laws of the United States and
+                  foreign countries. Except as expressly provided in these
+                  terms, we and our licensors exclusively own all right, title
+                  and interest in and to the Platform, all Materials, and all
+                  intellectual property rights therein, including, but not
+                  limited to: (i) the information, features, text, content,
+                  files, graphics, art work, icons, audio, sounds, copyrighted
+                  text, works of authorship, descriptions, and user and visual
+                  interfaces; (ii) the Platform; (iii) the design, appearance,
+                  structure, selection, coordination, expression, look and feel,
+                  and arrangement of the Platform; and (iv) the domain names,
+                  trademarks, service marks, proprietary logos and other
+                  distinctive brand features found on, or in, our websites and
+                  the Platform. You will not remove, alter or obscure any
+                  copyright, trademark, service mark or other proprietary rights
+                  notices incorporated in or accompanying our websites, the
+                  Platform or any part thereof.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Miscellaneous</strong></span
+                ><br />
+                <span
+                  >The failure of either party to exercise, in any respect, any
+                  right provided for herein shall not be deemed a waiver of any
+                  further rights hereunder. If any provision of this Agreement
+                  is found to be unenforceable or invalid, that provision shall
+                  be limited or eliminated to the minimum extent necessary so
+                  that this Agreement shall otherwise remain in full force and
+                  effect and enforceable. This Agreement is not assignable,
+                  transferable or sublicensable by you except with Class Action,
+                  Inc’s prior written consent. Class Action, Inc. may transfer,
+                  assign or delegate this Agreement and its rights and
+                  obligations without consent. No agency, partnership, joint
+                  venture, or employment is created as a result of this
+                  Agreement and you do not have any authority of any kind to
+                  bind Class Action, Inc. in any respect whatsoever. Headings
+                  for each section have been included above for your
+                  convenience, but such headings do not have any legal meaning,
+                  and may not accurately reflect the content of the provisions
+                  they precede.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  >This website/platform may contain links to third party
+                  websites not controlled by Class Action, Inc. Any links on
+                  this website/platform to third party web sites does not imply
+                  that Class Action, Inc. endorses or accepts responsibility for
+                  the content or use of the third party web site, and such links
+                  are provided for informational purposes only. Class Action,
+                  Inc. does not guarantee the content or accuracy of any
+                  information or data displayed on any third party web site.
+                  Class Action, Inc. shall not be liable in any way to the
+                  reader or any other person, firm or corporation whatsoever for
+                  any delays, inaccuracies, errors in or omissions of any
+                  information or data or the transmission thereof. The use of a
+                  third party web site may be subject to "Terms of Use",
+                  "Disclaimers" or similar legal conditions which can be
+                  substantially different from those associated with those of
+                  this website/platform. When using third party web sites, you
+                  should familiarize yourself with the terms, conditions and
+                  policies implicated by the use of that site. It is your
+                  responsibility to take precautions to ensure that whatever you
+                  select for your use is free of viruses or other items of a
+                  destructive nature.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Guarantee</strong></span
+                ><br />
+                <span
+                  >UNLESS OTHERWISE EXPRESSED, Class Action, Inc. EXPRESSLY
+                  DISCLAIMS ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER
+                  EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED
+                  WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A
+                  PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+                </span>
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Contact Information</strong></span
+                >
+                <br /><span
+                  >If you have any questions or comments about these our Terms
+                  of Service outlined above, please contact us at
+                  <a href="mailto:hello@classactionapp.com"
+                    >hello@classactionapp.com</a
+                  ></span
+                >
+                <br /><br /><small
+                  >This Agreement was last revised on August 30th, 2018.</small
+                >
+              </div>
+              <div id="legal-text-privacy" class="hidden">
+                <span
+                  >This Privacy Policy explains what Class Action, Inc. (CAI)
+                  does with the personal information that is collected from our
+                  users. CAI may change its policy from time to time, so it is
+                  suggested that you check this web site from time to time to
+                  ensure that you know about our current policy. If you have any
+                  questions or concerns regarding this policy, you should
+                  contact us at hello@classactionapp.com.</span
+                >
+                <br /><br />
+                <span
+                  >CAI may collect IP addresses to help understand how our
+                  audience uses our site and to gather broader demographic
+                  information, so that CAI can make its site better and improve
+                  users’ overall experience when they visit Classactionapp.com.
+                  For these same reasons, if your browser is set up to accept
+                  them, CAI uses a feature known as a “cookie.” Cookies contain
+                  bits of information that websites transfer to your computer’s
+                  hard drive for record keeping purposes. Cookies can make the
+                  Web more useful by storing information about your preferences
+                  on a particular site such as Classactionapp.com. A cookie
+                  doesn’t tell CAI who you are. Only you can do that.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Children</strong></span
+                >
+                <br /><span
+                  >If you are under 18, you may not use this site.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong
+                    >How CAI Discloses Your Personal Information</strong
+                  ></span
+                >
+                <br /><span
+                  >CAI will only disclose any personally identifiable
+                  information about individual users, in accordance with this
+                  Privacy Policy and the Terms of Service, or to comply with
+                  applicable laws or valid legal process, or to protect the
+                  rights or property of CAI.</span
+                >
+                <br /><br />
+                <span
+                  >CAI discloses personally identifiable individual information
+                  and the other information you provide us to lawyers or law
+                  firms in accordance with the Services we provide. CAI cannot
+                  guarantee that the information you submit to us will not end
+                  up in the hands of a company or person that you are
+                  complaining about.</span
+                >
+                <br /><br />
+                <span
+                  >CAI may also disclose your contact information and the other
+                  information that you provide us in the following
+                  circumstances:</span
+                >
+                <br /><br />
+                <span
+                  >CAI may employ other companies and individuals to perform
+                  functions on our behalf. They may have access to personal
+                  information needed to perform their functions, but will not be
+                  able to legally use it for other purposes. CAI might change,
+                  sell, reorganize or liquidate via bankruptcy this business. If
+                  so, your information will be one of the transferred assets.
+                  CAI may release account and other personal information when
+                  CAI believes release is appropriate to comply with law, or to
+                  protect the rights, property, or safety of CAI, our users, or
+                  others.</span
+                >
+                <br /><span
+                  >From time to time CAI may also provide aggregate
+                  (statistical) information to third parties to describe our
+                  services to prospective partners, advertisers, and other third
+                  parties, and for other lawful purposes. If CAI partners with
+                  another party to provide a specific service to you, and if you
+                  sign up for the service, then and only then will CAI provide
+                  your other information to such partner.</span
+                >
+                <br /><br />
+                <span
+                  >CAI may use the information you have provided for our mailing
+                  lists and promotional marketing. You may opt out of these
+                  emails and marketing materials at any time. To do so, Email
+                  hello@classactionapp.com and we will promptly remove you from
+                  ALL correspondence.</span
+                ><br /><br /><span
+                  >CAI stores user data on a reputable data hosting platform,
+                  "platform". Platform's data is encrypted both when it is sent
+                  to and from our servers, as well as when it is at rest. To
+                  protect your content in transit, Platform uses 256-bit SSL/TLS
+                  encryption. At rest, Platform content is protected using
+                  256-bit AES encryption. Platform's production data is
+                  regularly backed up to a separate, isolated location and all
+                  backups are encrypted.</span
+                >
+                <br /><br />
+                <span
+                  >This Privacy Policy pertains to all actions and duties
+                  performed on this site and the user hereby agrees to this
+                  Privacy Policy by using this site.</span
+                >
+              </div>
+              <div id="legal-text-userAgree" class="hidden">
+                <span
+                  >By using this website, the Services and or The Platform, The
+                  User agrees to This Service Agreement (this "Agreement") made
+                  by and between Class Action, Inc. (CAI) and The User.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(1) Purpose</strong></span
+                >
+                <br /><span
+                  >The User wishes to engage CAI to provide the following
+                  services, which include, but are not limited to: acting as the
+                  User’s exclusive representative in connection with procuring
+                  any of the User’s buyback and restitution payment(s) for any
+                  and all claims pertaining to class action settlements.
+                  (together referred to as the “Settlement Agreements”) in the
+                  United States. (the “Services”). CAI shall be the User’s
+                  exclusive representative for purposes of obtaining any buyback
+                  and restitution payments owed to the User under the Settlement
+                  Agreements.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(2) Service Fee</strong></span
+                >
+                <br /><span
+                  >In consideration of CAI’s provision of the Services to the
+                  User, the User shall compensate CAI</span
+                >
+                <br /><span
+                  >as follows: 5% of the User’s gross Buyback payment and / or
+                  restitution payments, or the total amount of reasonable and
+                  related processing fees, whichever is higher, under the
+                  Settlement Agreements (i.e., before deductions for costs and
+                  expenses) in connection with information supplied by the User,
+                  hereto (the “Service Fees”). Such Service Fees shall be
+                  contingent upon CAI receiving on the User’s behalf, the
+                  buyback and restitution payments under the Settlement
+                  Agreements. If no buyback or restitution payments are received
+                  by CAI on the User’s behalf, no fees shall be paid to CAI in
+                  connection with the Services.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(a) Costs and Expenses:</strong> CAI may incur
+                  various costs and expenses in performing the Services under
+                  this</span
+                >
+                <br /><span
+                  >Agreement. The User agrees to pay for all costs,
+                  disbursements and expenses paid or owed by the User in
+                  connection with this Agreement, or which have been advanced by
+                  CAI on the User’s behalf and which have not been previously
+                  paid or reimbursed to CAI (it being agreed and understood that
+                  the User shall only be responsible for reimbursement of such
+                  costs in the event of a recovery. If no recovery is obtained,
+                  the User shall NOT be responsible for reimbursement of costs).
+                  Such costs and expenses shall be paid by the User from the
+                  restitution payment(s) received by CAI on its behalf.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(3) Limitation of Liability</strong></span
+                >
+                <br /><span
+                  >IN NO EVENT SHALL CAI BE LIABLE TO USER FOR INCIDENTAL,
+                  SPECIAL,</span
+                >
+                <br /><span
+                  >INDIRECT, PUNITIVE, EXEMPLARY OR CONSEQUENTIAL DAMAGES
+                  (INCLUDING, WITHOUT LIMITATION, ANY DAMAGES RELATING TO LOST
+                  PROFITS OR LOSS OF BUSINESS OPPORTUNITY) UNDER ANY
+                  CIRCUMSTANCES EVEN IF USER OR CAI HAS BEEN ADVISED OF THE
+                  POSSIBILITY OF SUCH DAMAGES. CAI’S LIABILITY, WHETHER IN TORT,
+                  CONTRACT, OR OTHERWISE, IS LIMITED TO THE AMOUNT OF FEES PAID
+                  TO CAI FOR SERVICES PURSUANT TO THIS AGREEMENT.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(4) Disclaimer of Guarantee</strong></span
+                >
+                <br /><span
+                  >Nothing in this Agreement and nothing in CAI’s statements to
+                  User, statements to third parties, or CAI's marketing
+                  materials, will be construed as a promise or guarantee about
+                  the outcome of this matter. CAI makes no such promises or
+                  guarantees. There can be no assurance that User will
+                  ultimately achieve the results contemplated by this Agreement
+                  notwithstanding CAI’s best efforts. User acknowledges that CAI
+                  has made no promise or guarantees about the outcome.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(5) Miscellaneous</strong></span
+                >
+                <br /><span class="text-theme-dark-navy"
+                  ><strong>(a) Governing Law; Arbitration:</strong> This
+                  Agreement, and all claims or causes of action (whether in
+                  contract or tort) that may be based upon, arise out of or
+                  relate to this Agreement, or the negotiation, execution or
+                  performance of this Agreement (including without limitation
+                  any claim or cause of action based upon, arising out of or
+                  related to any representation or warranty made in or in
+                  connection with this Agreement or as an inducement to enter
+                  into this Agreement) (“Claims”), shall be governed by and
+                  construed in accordance with the internal laws of the State of
+                  California, without reference to choice of law doctrine. Each
+                  of the Parties hereto (a) hereby irrevocably submits to the
+                  exclusive jurisdiction of the American Arbitration Association
+                  (“AAA”) or any successor organization or body thereto, for the
+                  purpose of resolving any Claims, and (b) hereby irrevocably
+                  agrees that all Claims in respect of such proceedings will be
+                  heard and determined in San Francisco County, California, in
+                  accordance with the Commercial Arbitration Rules of the AAA,
+                  before a single arbitrator to be mutually agreed upon by the
+                  Parties.
+                </span>
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(b) Notices:</strong> Any notice given hereunder
+                  shall be in writing and delivered by hand, overnight</span
+                >
+                <br /><span
+                  >courier or by first class mail, addressed as follows:</span
+                >
+                <br /><span>Class Action, Inc.</span> <br /><span
+                  >2777 Alvarado Street, Suite E,</span
+                >
+                <br /><span>San Leandro, California 94577</span> <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(c) Electronic Signatures:</strong> The parties agree
+                  that the electronic signature, whether digital or encrypted,
+                  of a party to this Agreement shall be as valid as an original
+                  signature of such party and shall be effective to bind such
+                  party to this Agreement. The parties agree that any
+                  electronically signed document (including this Agreement)
+                  shall be deemed (i) to be "written" or "in writing," (ii) to
+                  have been signed and (iii) to constitute a record established
+                  and maintained in the ordinary course of business and an
+                  original written record when printed from electronic files.
+                  Such paper copies or "printouts," if introduced as evidence in
+                  any judicial, arbitral, mediation or administrative
+                  proceeding, will be admissible as between the parties to the
+                  same extent and under the same conditions as other original
+                  business records created and maintained in documentary form.
+                  Neither party shall contest the admissibility of true and
+                  accurate copies of electronically signed documents on the
+                  basis of the best evidence rule or as not satisfying the
+                  business records exception to the hearsay rule. For purposes
+                  hereof, "electronic signature" means a manually-signed
+                  original signature that is then transmitted by electronic
+                  means; "transmitted by electronic means" means sent in the
+                  form of a facsimile or sent via the internet as a "pdf"
+                  (portable document format) or other replicating image; and,
+                  "electronically signed document" means a document transmitted
+                  by electronic means and containing, or to which there is
+                  affixed, an electronic signature, whether digital or
+                  encrypted.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(d) Entire Agreement:</strong> This Agreement
+                  contains the entire agreement of the Parties respecting the
+                  subject</span
+                >
+                <br /><span
+                  >matter of this Agreement and supersedes in all respects and
+                  for all purposes all prior agreements (written or oral)
+                  between the Parties and any of their respective
+                  controlled-affiliates respecting the subject matter of this
+                  Agreement. Neither Party (nor any of its representatives) has
+                  made any representation or warranty on which the other Party
+                  has relied or is entitled to rely other than as expressly set
+                  forth in this Agreement. CAI is not responsible for performing
+                  any services not specifically described in the Agreement or in
+                  a subsequent writing signed by the parties.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(e) Amendment and Waiver:</strong> Except as
+                  otherwise provided herein, this Agreement may not be amended
+                  or</span
+                >
+                <br /><span
+                  >modified except by a writing executed by the Parties. Waiver
+                  by a Party of any provision or any breach of any provision of
+                  this Agreement shall not be deemed to be a waiver of such
+                  provision in any other instance, or of any other breach of any
+                  provision hereof.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(f) Authorized Agent Agreement:</strong> The User
+                  hereby designates and appoints CAI, as their authorized agent
+                  in the United States to accept and acknowledge on their behalf
+                  service of any and all process which may be served upon The
+                  User in connection with any suit, action or proceeding
+                  regarding injunctive or other equitable relief in connection
+                  with or under this Agreement or to enforce any award under
+                  this Agreement, and agrees that service of process upon said
+                  agent at said address and written notice of said service
+                  mailed or delivered in the manner provided herein shall be
+                  deemed in every respect effective service of process upon The
+                  User and/or Guarantor in connection with any suit, action or
+                  proceeding regarding injunctive or other equitable relief in
+                  connection with or under this Agreement or to enforce any
+                  award in connection with or under this Agreement. The User
+                  hereby agrees to provide CAI with all supporting documents and
+                  authorizations necessary to procure the User’s buyback and
+                  restitution payment(s) including, but not limited to:
+                  identification information, financial records, use records,
+                  purchase records, and authorization to obtain relevant records
+                  from third parties. User hereby agrees to indemnify and hold
+                  harmless CAI for any and all claim denials, loss of
+                  restitution, restitution reductions, and loss of business
+                  opportunity due to incorrect claim information provided to CAI
+                  by the User.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(g) Assignee Agreement:</strong> The User hereby
+                  acknowledges and agrees that CAI may collect funds on behalf
+                  of the User as the assignee for the User. CAI will collect its
+                  fee from any funds received and then disburse the remaining
+                  funds to the User.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(h) Severability:</strong> Any term of provision of
+                  this Agreement that is or may become invalid or unenforceable
+                  in</span
+                >
+                <br /><span
+                  >any applicable jurisdiction shall be, as to such
+                  jurisdiction, deemed modified so as to allow enforceability of
+                  the Parties’ original intent, as well as of the remaining
+                  terms and provisions of this Agreement. The User and CAI
+                  hereto agree that failure by either party to strictly enforce
+                  any provision of this agreement shall not constitute a waiver
+                  or an estoppel, nor preclude either party from subsequent
+                  strict enforcement of any or all provisions hereof.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(i) Transfer:</strong> CAI may assign the Agreements
+                  or any part of them, and CAI may delegate any of its
+                  obligations under the Agreements. You may not assign the
+                  Agreements or any part of them, nor transfer or sub-license
+                  your rights under the Agreements, to any third party.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(j) No Partnership:</strong> This Agreement is not
+                  intended to create or evidence any partnership, joint venture,
+                  agency, or similar relationship of any kind whatsoever.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(k) Termination of use:</strong> The Agreements will
+                  continue to apply to the User until terminated by either the
+                  User or CAI. However, you acknowledge and agree that the
+                  perpetual license granted by you in relation to User Content,
+                  including Feedback, is irrevocable and will therefore continue
+                  after expiry or termination of any of the Agreements for any
+                  reason. CAI may terminate the Agreements or suspend the User's
+                  access to the CAI Service at any time, including in the event
+                  of the User's actual or suspected unauthorised use of the CAI
+                  Service and/or Content, or non-compliance with the Agreements.
+                  If the User or CAI terminate the Agreements, or if CAI
+                  suspends the User's access to the CAI Service, the User agrees
+                  that CAI shall have no liability or responsibility to the User
+                  except for disbursing any collected funds owed to the User .
+                  To terminate this agreement, simply send us an email with the
+                  subject 'I'd like to terminate our agreement' and Class
+                  Action, Inc will reply with a confirmation within 5 business
+                  days. This section will be enforced to the extent permissible
+                  by applicable law. The User may terminate the Agreements at
+                  any time.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(l) Headings:</strong> The heading to any paragraph
+                  in this Agreement in no way defines, limits, extends or
+                  interprets</span
+                >
+                <br /><span>the scope of this Agreement.</span> <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>(m) Counterparts and Execution:</strong> This
+                  Agreement may be executed in one or more counterparts, each
+                  of</span
+                >
+                <br /><span
+                  >which will be deemed to be an original but all of which will
+                  constitute one and the same agreement. This Agreement may be
+                  executed by facsimile and or phone-recorded signatures and
+                  such signature will be deemed binding for all purposes of this
+                  Agreement, without delivery of an original signature being
+                  thereafter required.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Review</strong></span
+                >
+                <br /><span
+                  >The User understands and acknowledges that User is engaging
+                  CAI as their authorized agent to file on their behalf in class
+                  action settlements. User acknowledges and understands that
+                  User is not required to use a third party agent for filing and
+                  prior to retaining CAI to file on their behalf, may choose to
+                  file without assistance. The User also understands and
+                  acknowledges that CAI will act as the assignee on the behalf
+                  of the User. This will allow CAI to receive funds on behalf of
+                  the User, collects CAI's fee for services in connection with
+                  the transaction, and disburse remaining funds owed to the
+                  User.</span
+                >
+                <br /><br />
+                <span class="text-theme-dark-navy"
+                  ><strong>Contact Information</strong></span
+                >
+                <br /><span
+                  >If you have any questions or comments about our User
+                  Agreement as outlined above, you can contact us at
+                  hello@classactionapp.com</span
+                >
+                <br /><br />
+                <small
+                  >This Agreement was last revised on August 30th, 2018.</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="site-footer site-section themed-background-extra-dark">
+        <div class="container">
+          <!-- Footer Links -->
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <h4 class="footer-heading">About Us</h4>
+              <ul class="footer-nav list-inline">
+                <li><a href="/#whoweare">Company</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/faq/">Blog</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <h4 class="footer-heading">Legal</h4>
+              <ul class="footer-nav list-inline">
+                <li><a id="footerTerms" href="javascript:void(0)">Terms</a></li>
+                <li>
+                  <a id="footerPrivacy" href="javascript:void(0)">Privacy</a>
+                </li>
+                <li>
+                  <a id="footerUserAgree" href="javascript:void(0)"
+                    >User Agreement</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <h4 class="footer-heading">Follow Us</h4>
+              <ul class="footer-nav footer-nav-social list-inline">
+                <li>
+                  <a
+                    href="https://www.facebook.com/ClassActionIncDotCom/"
+                    target="_blank"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/classactioninc" target="_blank"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <h4 class="footer-heading">
+                <span id="year-copy">2018-19</span> ©
+                <a href="/">Class Action, Inc.</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <a href="#" id="to-top"><i class="fa fa-angle-up"></i></a>
+    <script>
+      document
+        .getElementById("support")
+        .addEventListener("mouseenter", myFunction);
+      function myFunction() {
+        var a = document.getElementById("support").nextSibling;
+        a.nextSibling.addEventListener("mouseenter", myFunction3);
+        function myFunction3() {
+          a.nextSibling.style.display = "block";
+        }
+        a.nextSibling.addEventListener("mouseleave", myFunction4);
+        function myFunction4() {
+          a.nextSibling.style.display = "none";
+        }
+        a.nextSibling.style.display = "block";
+      }
+
+      document
+        .getElementById("support")
+        .addEventListener("mouseleave", myFunction2);
+      function myFunction2() {
+        var a = document.getElementById("support").nextSibling;
+        a.nextSibling.style.display = "none";
+      }
+    </script>
+    <script>
+      // document.getElementById("login").addEventListener("mouseenter", myFunction);
+      function myFunction() {
+        var a = document.getElementById("login").nextSibling;
+        console.log(a);
+        a.nextSibling.addEventListener("mouseenter", myFunction3);
+        function myFunction3() {
+          a.nextSibling.style.display = "block";
+        }
+        a.nextSibling.addEventListener("mouseleave", myFunction4);
+        function myFunction4() {
+          a.nextSibling.style.display = "none";
+        }
+        a.nextSibling.style.display = "block";
+      }
+
+      // document.getElementById("login").addEventListener("mouseleave", myFunction2);
+      function myFunction2() {
+        var a = document.getElementById("support").nextSibling;
+        a.nextSibling.style.display = "none";
+      }
+    </script>
+    <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+    <script src="https://test.classactioninc.com/js/vendor/jquery.min.js"></script>
+    <script src="https://test.classactioninc.com/js/vendor/bootstrap.min.js"></script>
+    <div
+      style="width:0px; height:0px; display:none; visibility:hidden;"
+      id="batBeacon0.06991923275823075"
+    >
+      <img
+        style="width:0px; height:0px; display:none; visibility:hidden;"
+        id="batBeacon0.6108795113876972"
+        width="0"
+        height="0"
+        alt=""
+        src="http://bat.bing.com/action/0?ti=25042834&amp;Ver=2&amp;mid=765a6b5c-5757-7186-0977-eeb354ff4c1e&amp;pi=1200101525&amp;lg=en-US&amp;sw=1440&amp;sh=900&amp;sc=24&amp;tl=Class%20Action,%20Inc.&amp;p=https%3A%2F%2Ftest.classactioninc.com%2Ftakata%2F&amp;r=&amp;evt=pageLoad&amp;msclkid=N&amp;rn=105136"
+      />
+    </div>
+    <script src="https://test.classactioninc.com/js/plugins.js"></script>
+    <script src="https://test.classactioninc.com/js/app.js"></script>
+    <script src="https://test.classactioninc.com/js/vendor/anime.min.js"></script>
+    <script>
+      $("#footerTerms").on("click", e => {
+        $("#legal-modal .modal-header h2").addClass("hidden");
+        $("#legal-modal .modal-body div").addClass("hidden");
+        $("#legal-terms-title").removeClass("hidden");
+        $("#legal-text-terms").removeClass("hidden");
+        $("#legal-modal").modal();
+      });
+
+      $("#footerPrivacy").on("click", e => {
+        $(".modal-header h2").addClass("hidden");
+        $("#legal-modal .modal-body div").addClass("hidden");
+        $("#legal-privacy-title").removeClass("hidden");
+        $("#legal-text-privacy").removeClass("hidden");
+        $("#legal-modal").modal();
+      });
+
+      $("#footerUserAgree").on("click", e => {
+        $(".modal-header h2").addClass("hidden");
+        $("#legal-modal .modal-body div").addClass("hidden");
+        $("#legal-userAgree-title").removeClass("hidden");
+        $("#legal-text-userAgree").removeClass("hidden");
+        $("#legal-modal").modal();
+      });
+
+      $("#footerUserAgreement").on("click", e => {
+        $(".modal-header h2").addClass("hidden");
+        $("#legal-modal .modal-body div").addClass("hidden");
+        $("#legal-userAgree-title").removeClass("hidden");
+        $("#legal-text-userAgree").removeClass("hidden");
+        $("#legal-modal").modal();
+      });
+    </script>
+    <script>
+      let obj = { data: [] };
+      let claimVehicles = [];
+      let loggedIn;
+      let queryStr = "";
+      var table;
+      let user_id;
+      let log = false;
+      function getVehiclesData() {
+        App.postData(
+          "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/cai_auth-tgtyd/service/svc_admin_dash/incoming_webhook/getAvailVehicles?secret=9e2676d211803aa2014a",
+          null,
+          false,
+          null
+        )
+          .then(data => {
+            vehiclesData = JSON.parse(data);
+            let makeArray = [];
+            let uniqueArray = [];
+            let options = "";
+
+            vehiclesData.forEach(element => {
+              makeArray.push(element.make);
+            });
+
+            uniqueArray = [...new Set(makeArray)];
+
+            $.each(uniqueArray, function(index, value) {
+              if (index == 0) {
+                options += '<option value= "Value">Choose a Make</option>';
+              }
+              options +=
+                '<option value= "' + value + '">' + value + "</option>";
+            });
+            $("#makeSelect").html(options);
+            $("#makeSelect").trigger("chosen:updated");
+          })
+          .catch(data => {});
+      }
+
+      function changeMake(selectedObj) {
+        let modelArray = [];
+        let uniqueModels = [];
+        let yearArray = [];
+        let uniqueYear = [];
+        vehiclesData.forEach(element => {
+          if (element.make === selectedObj.value) {
+            modelArray.push(element.model);
+            yearArray.push(element.year);
+          }
+        });
+        uniqueModels = [...new Set(modelArray)];
+        uniqueYear = [...new Set(yearArray)];
+        let modelOptions = "";
+        let yearOptions = "";
+        uniqueModels.sort();
+        uniqueYear.sort();
+        $.each(uniqueModels, function(index, value) {
+          modelOptions +=
+            '<option value= "' + value + '">' + value + "</option>";
+        });
+        $.each(uniqueYear, function(index, value) {
+          yearOptions +=
+            '<option value= "' + value + '">' + value + "</option>";
+        });
+        $("#model").html(modelOptions);
+        $("#model").trigger("chosen:updated");
+        $("#year").html(yearOptions);
+        $("#year").trigger("chosen:updated");
+      }
+
+      jQuery(document).ready(function() {
+        getVehiclesData();
+        App.datatables();
+      });
+
+      Dropzone.options.drop = {
+        maxFilesize: 500,
+        autoProcessQueue: false,
+        init: function() {
+          var submitButton = document.querySelector("#dropSubmit");
+          myDropzone = this;
+
+          submitButton.addEventListener("click", function() {
+            /* Check if file is selected for upload */
+            if (
+              myDropzone.getUploadingFiles().length === 0 &&
+              myDropzone.getQueuedFiles().length === 0
+            ) {
+              alert("No file selected for upload");
+              return false;
+            } else {
+              /* Remove event listener and start processing */
+
+              // myDropzone.removeEventListeners();
+              // myDropzone.processQueue();
+              let aa = myDropzone.getQueuedFiles()[0];
+              console.log(aa[0]);
+              var formData = new FormData();
+              formData.append("file", aa);
+              $.ajax({
+                method: "POST",
+                url: "fileUpload.php",
+                data: formData,
+                processData: false, // required for FormData with jQuery
+                contentType: false, // required for FormData with jQuery
+                success: function(response) {
+                  // do something
+                  console.log(response);
+                  let objPass = {
+                    user_id: "1234",
+                    vinPicURL:
+                      "https://docs.classactioninc.com/vinpics/fileName.jpg"
+                  };
+                  App.postData(
+                    "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/cai_auth-tgtyd/service/svc_claims/incoming_webhook/processVINPic?secret=045776bcdf9edcfacc69",
+                    JSON.stringify(objSignUp),
+                    false,
+                    null
+                  )
+                    .then(data => {
+                      console.log(data);
+                    })
+                    .catch(data => {});
+                }
+              });
+            }
+          });
+
+          /* On Success, do whatever you want */
+          this.on("success", function(file, responseText) {
+            alert("Success");
+          });
+        }
+      };
+
+      function addClick() {
+        let make = $("#makeSelect").val();
+        let model = $("#model").val();
+        let year = $("#year").val();
+        let tdStrings = [];
+
+        if (model && model.length > 0) {
+          model.forEach(element => {
+            if (year && year.length > 0) {
+              year.forEach(item => {
+                obj.data.push({ make: make, model: element, year: item });
+              });
+            } else {
+              obj.data.push({ make: make, model: element, year: null });
+            }
+          });
+        } else {
+          obj.data.push({ make: make, model: null, year: null });
+        }
+
+        App.postData(
+          "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/cai_auth-tgtyd/service/svc_claims/incoming_webhook/checkTakataEligibility?secret=f98c8fc1ec4e87fbcf95",
+          JSON.stringify(obj),
+          false,
+          null
+        )
+          .then(data => {
+            claimVehicles = [];
+            let dataParse = JSON.parse(data);
+            console.log(dataParse);
+            $("#vehicle-table > tbody").html("");
+            if (dataParse.length > 0 || dataParse.length > 0) {
+              // $('#resultsdiv').removeClass('hide');
+              $("#resultsdiv").show();
+              let dataSet = [];
+              dataParse.forEach(element => {
+                if (element.eligible) {
+                  dataSet.push({
+                    make: element.make,
+                    model: element.model,
+                    year: element.year,
+                    eligible:
+                      "<span class='text-center label label-primary'>Yes</span>"
+                  });
+                  document.getElementById("file").style.display =
+                    "inline-block";
+                  document.getElementById("header-text").innerHTML =
+                    "<b>Your Vehicle is Eligible!</b>";
+                  claimVehicles.push(element);
+                } else {
+                  dataSet.push({
+                    make: element.make,
+                    model: element.model,
+                    year: element.year,
+                    eligible:
+                      "<span class='text-center label label-default'>No</span>"
+                  });
+                }
+              });
+              if ($.fn.DataTable.isDataTable("#vehicle-table")) {
+                $("#vehicle-table")
+                  .DataTable()
+                  .destroy();
+                $("#vehicle-table").empty();
+              }
+              $("#vehicle-table").DataTable({
+                data: dataSet,
+                columnDefs: [
+                  {
+                    targets: [0, 1, 2, 3], // your case first column
+                    className: "text-center"
+                  }
+                ],
+                columns: [
+                  { title: "Make", data: "make" },
+                  { title: "Model", data: "model" },
+                  { title: "Year", data: "year" },
+                  { title: "Eligible", data: "eligible" }
+                ]
+              });
+
+              var clientHeight = document.getElementById("resultsdiv")
+                .clientHeight;
+              var fileHeight = clientHeight / 2;
+              document.getElementById("file").style.marginTop =
+                fileHeight + "px";
+            } else {
+              alert("No Data Found");
+              $("#results-table").empty();
+            }
+          })
+          .catch(data => {});
+
+        $("#makeSelect")
+          .val("")
+          .trigger("chosen:updated");
+        $("#model")
+          .val("")
+          .trigger("chosen:updated");
+        $("#year")
+          .val("")
+          .trigger("chosen:updated");
+      }
+
+      $("#file").on("click", e => {
+        e.preventDefault();
+        loggedIn = "";
+        if (loggedIn || log) {
+          let claimSet = [];
+          let i = 0;
+          claimVehicles.forEach(element => {
+            claimSet.push({
+              make: element.make,
+              model: element.model,
+              year: element.year,
+              vin: "<input type='text' id='vin-" + i + "'/>"
+            });
+            i++;
+          });
+          if ($.fn.DataTable.isDataTable("#claim-table")) {
+            $("#claim-table")
+              .DataTable()
+              .destroy();
+            $("#claim-table").empty();
+          }
+          $("#claim-table").DataTable({
+            data: claimSet,
+            columns: [
+              { title: "Make", data: "make" },
+              { title: "Model", data: "model" },
+              { title: "Year", data: "year" },
+              { title: "VIN", data: "vin" }
+            ]
+          });
+          $("#claimDiv").show();
+        } else {
+          console.log("Here");
+          $("#termsBody").show();
+        }
+        $("#fileclaim-modal").modal();
+      });
+
+      $("#loginButton").on("click", e => {
+        e.preventDefault();
+        $("#termsBody").hide();
+        $("#logForm").show();
+        $("#signForm").hide();
+      });
+
+      $("#signupButton").on("click", e => {
+        e.preventDefault();
+        $("#termsBody").hide();
+        $("#logForm").hide();
+        $("#signForm").show();
+      });
+
+      $("#createAccount").on("click", e => {
+        e.preventDefault();
+        $("#termsBody").hide();
+        $("#logForm").hide();
+        $("#signForm").show();
+      });
+
+      $("#haveAccount").on("click", e => {
+        e.preventDefault();
+        $("#termsBody").hide();
+        $("#logForm").show();
+        $("#signForm").hide();
+      });
+
+      $("#signUpClick").on("click", e => {
+        e.preventDefault();
+        var email = $("#signup-email").val();
+        var firstName = $("#signup-first-name").val();
+        var lastName = $("#signup-last-name").val();
+        var objSignUp = {
+          email: email,
+          fname: firstName,
+          lname: lastName,
+          signup_source: "Takata_Landing"
+        };
+        App.postData(
+          "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/cai_auth-tgtyd/service/svc_cai_users/incoming_webhook/addUser?secret=95785b96f6a42f559674",
+          JSON.stringify(objSignUp),
+          false,
+          null
+        )
+          .then(data => {
+            let url = "/clarence/";
+            window.location.href = url;
+          })
+          .catch(data => {});
+      });
+
+      $("#theButton").on("click", e => {
+        e.preventDefault();
+        App.postData(
+          "login.php",
+          JSON.stringify({
+            email: $("#login-email").val(),
+            pass: $("#login-password").val(),
+            cai_uuid: sessionStorage.getItem("uid")
+          }),
+          true,
+          $("#errorDisp")
+        )
+          .then(data => {
+            console.log(data);
+            $("#theButton").html("<strong>Logged In</strong>");
+            $("#errorDisp")
+              .text("Login successful...")
+              .removeClass("alert-danger hidden")
+              .addClass("alert-success");
+            $("#termsBody").hide();
+            $("#logForm").hide();
+            $("#claimDiv").show();
+            user_id = data.user_id;
+            queryStr = "bptkn=" + data.token;
+            log = true;
+            let claimSet = [];
+            let i = 0;
+            claimVehicles.forEach(element => {
+              claimSet.push({
+                make: element.make,
+                model: element.model,
+                year: element.year,
+                vin: "<input type='text' id='vin-" + i + "'/>"
+              });
+              i++;
+            });
+            if ($.fn.DataTable.isDataTable("#claim-table")) {
+              $("#claim-table")
+                .DataTable()
+                .destroy();
+              $("#claim-table").empty();
+            }
+            table = $("#claim-table").DataTable({
+              data: claimSet,
+              columnDefs: [
+                {
+                  orderable: false,
+                  targets: [3]
+                }
+              ],
+              columns: [
+                { title: "Make", data: "make" },
+                { title: "Model", data: "model" },
+                { title: "Year", data: "year" },
+                { title: "VIN", data: "vin" }
+              ]
+            });
+          })
+          .catch(data => {
+            $("#theButton")
+              .attr("disabled", false)
+              .html('<i class="fa fa-arrow-right"></i> Login');
+            console.log(data);
+          });
+      });
+
+      $("#claimSubmit").on("click", e => {
+        e.preventDefault();
+        let vins = [];
+        for (var i = 0; i < claimVehicles.length; i++) {
+          let nm = "#vin-" + i;
+          let a = $(nm).val();
+          vins.push(a);
+        }
+        console.log(vins);
+        vins.forEach(function(item, i) {
+          console.log(i);
+          let vinObj = { user_id: user_id, VIN: item };
+          App.postData(
+            "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/cai_auth-tgtyd/service/svc_cai_users/incoming_webhook/updateUser?secret=c86b0ca7b5679f291d84",
+            JSON.stringify(vinObj),
+            false,
+            null
+          )
+            .then(data => {
+              if (i == vins.length - 1) {
+                console.log("Here It is 1");
+                let url = "/clarence/?" + window.btoa(queryStr);
+                window.location.href = url;
+              }
+            })
+            .catch(data => {});
+        });
+      });
+
+      $("#searchType").on("change", e => {
+        e.preventDefault();
+        console.log(e);
+        if (e.target.checked == false) {
+          $("#vehicle-form").hide();
+          $("#dropit").show();
+        } else {
+          $("#vehicle-form").show();
+          $("#dropit").hide();
+        }
+      });
+      $("#faspan").on("click", e => {
+        e.preventDefault();
+        console.log("Here?");
+        $("#vininfo-modal").modal();
+      });
+      $("#options").on("click", e => {
+        e.preventDefault();
+        $("#number").hide();
+        $("#find").show();
+      });
+      $("#close").on("click", e => {
+        e.preventDefault();
+        $("#vininfo-modal").modal("toggle");
+      });
+    </script>
+
+    <input
+      type="file"
+      multiple="multiple"
+      class="dz-hidden-input"
+      style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;"
+    />
+  </body>
+</html>
